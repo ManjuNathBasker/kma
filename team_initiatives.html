@@ -1,381 +1,724 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Noto+Serif:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "secondary-fixed": "#ffdea5",
-                        "error-container": "#ffdad6",
-                        "surface-container-low": "#f5f3f1",
-                        "on-secondary-container": "#785a1a",
-                        "inverse-primary": "#b5ccbb",
-                        "surface-tint": "#4e6356",
-                        "surface-dim": "#dbdad7",
-                        "on-background": "#1b1c1b",
-                        "primary-fixed": "#d0e8d7",
-                        "on-surface": "#1b1c1b",
-                        "on-secondary-fixed-variant": "#5d4201",
-                        "secondary": "#775a19",
-                        "error": "#ba1a1a",
-                        "surface-bright": "#fbf9f7",
-                        "background": "#fbf9f7",
-                        "primary": "#273b2f",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container": "#efeeeb",
-                        "tertiary-fixed": "#ffdada",
-                        "surface": "#fbf9f7",
-                        "surface-container-high": "#e9e8e5",
-                        "tertiary": "#4b3031",
-                        "secondary-fixed-dim": "#e9c176",
-                        "on-primary-fixed-variant": "#374b3f",
-                        "on-primary-fixed": "#0b1f15",
-                        "inverse-surface": "#30312f",
-                        "secondary-container": "#fed488",
-                        "on-tertiary-fixed": "#2c1516",
-                        "on-primary-container": "#adc4b4",
-                        "on-surface-variant": "#424844",
-                        "on-secondary": "#ffffff",
-                        "tertiary-container": "#644647",
-                        "surface-container-highest": "#e3e2e0",
-                        "primary-container": "#3d5245",
-                        "on-error": "#ffffff",
-                        "tertiary-fixed-dim": "#e5bdbd",
-                        "outline": "#737873",
-                        "on-error-container": "#93000a",
-                        "on-tertiary-fixed-variant": "#5c3f40",
-                        "primary-fixed-dim": "#b5ccbb",
-                        "outline-variant": "#c2c8c2",
-                        "inverse-on-surface": "#f2f0ee",
-                        "on-secondary-fixed": "#261900",
-                        "on-tertiary-container": "#deb5b6",
-                        "surface-variant": "#e3e2e0",
-                        "on-primary": "#ffffff",
-                        "on-tertiary": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "unit": "8px",
-                        "margin-mobile": "20px",
-                        "container-max": "1280px",
-                        "section-padding": "80px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Manrope"],
-                        "headline-md": ["Noto Serif"],
-                        "label-md": ["Manrope"],
-                        "display-lg-mobile": ["Noto Serif"],
-                        "headline-lg": ["Noto Serif"],
-                        "display-lg": ["Noto Serif"],
-                        "body-lg": ["Manrope"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
-                    }
-                },
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Noto+Serif:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffdea5",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f5f3f1",
+              "on-secondary-container": "#785a1a",
+              "inverse-primary": "#b5ccbb",
+              "surface-tint": "#4e6356",
+              "surface-dim": "#dbdad7",
+              "on-background": "#1b1c1b",
+              "primary-fixed": "#d0e8d7",
+              "on-surface": "#1b1c1b",
+              "on-secondary-fixed-variant": "#5d4201",
+              secondary: "#775a19",
+              error: "#ba1a1a",
+              "surface-bright": "#fbf9f7",
+              background: "#fbf9f7",
+              primary: "#273b2f",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#efeeeb",
+              "tertiary-fixed": "#ffdada",
+              surface: "#fbf9f7",
+              "surface-container-high": "#e9e8e5",
+              tertiary: "#4b3031",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary-fixed-variant": "#374b3f",
+              "on-primary-fixed": "#0b1f15",
+              "inverse-surface": "#30312f",
+              "secondary-container": "#fed488",
+              "on-tertiary-fixed": "#2c1516",
+              "on-primary-container": "#adc4b4",
+              "on-surface-variant": "#424844",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#644647",
+              "surface-container-highest": "#e3e2e0",
+              "primary-container": "#3d5245",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#e5bdbd",
+              outline: "#737873",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#5c3f40",
+              "primary-fixed-dim": "#b5ccbb",
+              "outline-variant": "#c2c8c2",
+              "inverse-on-surface": "#f2f0ee",
+              "on-secondary-fixed": "#261900",
+              "on-tertiary-container": "#deb5b6",
+              "surface-variant": "#e3e2e0",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
             },
-        }
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              "margin-mobile": "20px",
+              "container-max": "1280px",
+              "section-padding": "80px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "body-md": ["Manrope"],
+              "headline-md": ["Noto Serif"],
+              "label-md": ["Manrope"],
+              "display-lg-mobile": ["Noto Serif"],
+              "headline-lg": ["Noto Serif"],
+              "display-lg": ["Noto Serif"],
+              "body-lg": ["Manrope"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-lg-mobile": [
+                "36px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            },
+          },
+        },
+      };
     </script>
-<style>
-        .glass-card {
-            background: rgba(251, 249, 247, 0.7);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-        .pattern-overlay {
-            background-image: radial-gradient(circle at 2px 2px, rgba(39, 59, 47, 0.05) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .hero-gradient {
-            background: radial-gradient(circle at top right, rgba(255, 222, 165, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(39, 59, 47, 0.05), transparent);
-        }
+    <style>
+      .glass-card {
+        background: rgba(251, 249, 247, 0.7);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .pattern-overlay {
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(39, 59, 47, 0.05) 1px,
+          transparent 0
+        );
+        background-size: 24px 24px;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hero-gradient {
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(255, 222, 165, 0.15),
+            transparent
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(39, 59, 47, 0.05),
+            transparent
+          );
+      }
     </style>
-</head>
-<body class="bg-background text-on-background font-body-md antialiased">
-<!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out">
-<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
-<div class="flex items-center gap-3">
-<img alt="AL-HIKMAH Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFYoVrrb4X3i2hl3hV0xEtOo4BBeLk6scW_61nI3Gs1c2xFDgFNEB9PL8HgFSgdU1uiKMrLZSQnkQMsa84bGyzeJ7N_5XChKQqeAF_d36a9aOXcNitndFh6w1kUuvAXUpaBJS25hkjKXJuhq4b9WUcltBzqV17pHdtg_hTldZ18zG6UmWIqaFIRW1z5wo0Na6IPUE0unJ2FEuC4iclq2eAMxj1ze8KE1GBJcH6uP_9GhS-B0Ux9t2HyKq5k51MrYSpcJ6a67MaVbE"/>
-<span class="font-headline-md text-headline-md text-primary">AL-HIKMAH</span>
-</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md" href="#">Home</a>
-<a class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-body-md text-body-md" href="#">Programs</a>
-<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md" href="#">Events</a>
-<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md" href="#">Donations</a>
-<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md" href="#">Contact</a>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:bg-primary-container transition-all">
-                Donate Now
-            </button>
-</div>
-</nav>
-<!-- Main Content Canvas -->
-<main class="pt-24 pattern-overlay">
-<!-- Hero Section -->
-<section class="relative py-section-padding px-gutter overflow-hidden hero-gradient">
-<div class="max-w-container-max mx-auto text-center relative z-10">
-<span class="inline-block font-label-md text-secondary tracking-widest uppercase mb-4">Our Mission in Action</span>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 max-w-3xl mx-auto">
-                    Merging Visionary Leadership with Grassroots Empowerment.
-                </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                    At Al-Hikmah, we believe that strategic guidance and compassionate service are the pillars of sustainable community development.
+  </head>
+  <body class="bg-background text-on-background font-body-md antialiased">
+       <!-- Top Navigation Bar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-variant/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out"
+    >
+      <div
+        class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto"
+      >
+        <div
+          class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight"
+        >
+          <img
+            alt="AL-HIKMAH Logo"
+            class="h-12 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"
+          />
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+          <a
+            class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-body-md text-body-md"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="about.html"
+            >About Us</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="team_initiatives.html"
+            >Team & Initiatives</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="gallery.html"
+            >Gallery</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="contact.html"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform"
+        >
+          Donate Now
+        </button>
+      </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="pt-24 pattern-overlay">
+      <!-- Hero Section -->
+      <section
+        class="relative py-section-padding px-gutter overflow-hidden hero-gradient"
+      >
+        <div class="max-w-container-max mx-auto text-center relative z-10">
+          <span
+            class="inline-block font-label-md text-secondary tracking-widest uppercase mb-4"
+            >Our Mission in Action</span
+          >
+          <h1
+            class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 max-w-3xl mx-auto"
+          >
+            Merging Visionary Leadership with Grassroots Empowerment.
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
+          >
+            At Al-Hikmah, we believe that strategic guidance and compassionate
+            service are the pillars of sustainable community development.
+          </p>
+        </div>
+      </section>
+      <!-- Programs Overview (Bento Grid Style) -->
+      <section class="py-section-padding px-gutter bg-surface-container-low">
+        <div class="max-w-container-max mx-auto">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4"
+          >
+            <div>
+              <h2 class="font-headline-lg text-headline-lg text-primary mb-2">
+                Programs &amp; Services
+              </h2>
+              <p class="font-body-md text-on-surface-variant max-w-xl">
+                Comprehensive support systems designed to uplift every segment
+                of our community through specialized initiatives.
+              </p>
+            </div>
+            <div class="flex gap-2">
+              <div
+                class="w-12 h-[2px] bg-secondary-fixed-dim self-center mb-2"
+              ></div>
+              <span class="font-label-md text-secondary">IMPACT AREAS</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <!-- Education Support -->
+            <div
+              class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2"
+            >
+              <div
+                class="bg-primary-fixed text-primary w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined" data-icon="school"
+                  >school</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                Education Support
+              </h3>
+              <p class="font-body-md text-on-surface-variant">
+                Providing academic resources, tutoring, and literacy programs to
+                ensure no child is left behind in their educational journey.
+              </p>
+            </div>
+            <!-- Scholarship Programs -->
+            <div
+              class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2"
+            >
+              <div
+                class="bg-secondary-container text-on-secondary-container w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  data-icon="workspace_premium"
+                  >workspace_premium</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                Scholarships
+              </h3>
+              <p class="font-body-md text-on-surface-variant">
+                Financial grants for meritorious students from underserved
+                backgrounds to pursue higher education and professional degrees.
+              </p>
+            </div>
+            <!-- Food Distribution -->
+            <div
+              class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2"
+            >
+              <div
+                class="bg-tertiary-fixed text-on-tertiary-fixed w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  data-icon="volunteer_activism"
+                  >volunteer_activism</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                Food Security
+              </h3>
+              <p class="font-body-md text-on-surface-variant">
+                Monthly ration distribution and community kitchens dedicated to
+                eradicating hunger within our local vulnerable populations.
+              </p>
+            </div>
+            <!-- Orphan Care -->
+            <div
+              class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2"
+            >
+              <div
+                class="bg-primary-fixed text-primary w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined" data-icon="child_care"
+                  >child_care</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                Orphan Care
+              </h3>
+              <p class="font-body-md text-on-surface-variant">
+                Holistic sponsorship including housing, healthcare, and
+                emotional support for children who have lost their guardians.
+              </p>
+            </div>
+            <!-- Community Welfare -->
+            <div
+              class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2"
+            >
+              <div
+                class="bg-secondary-container text-on-secondary-container w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined" data-icon="groups"
+                  >groups</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                Community Welfare
+              </h3>
+              <p class="font-body-md text-on-surface-variant">
+                Legal aid, housing assistance, and crisis intervention services
+                for families facing immediate socio-economic threats.
+              </p>
+            </div>
+            <!-- Skill Development -->
+            <div
+              class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2"
+            >
+              <div
+                class="bg-tertiary-fixed text-on-tertiary-fixed w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined" data-icon="engineering"
+                  >engineering</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                Skill Training
+              </h3>
+              <p class="font-body-md text-on-surface-variant">
+                Vocational training centers focused on equipping youth and women
+                with marketable skills for economic independence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Leadership & Team Section -->
+      <section class="py-section-padding px-gutter bg-surface">
+        <div class="max-w-container-max mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+              Leadership &amp; Board
+            </h2>
+            <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">
+              Guided by a diverse board of professionals committed to
+              transparency, excellence, and ethical governance.
+            </p>
+          </div>
+          <!-- Primary Leadership (The Top 3) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- Chairman -->
+            <div class="relative group">
+              <div
+                class="aspect-[4/5] overflow-hidden rounded-2xl mb-4 bg-surface-container shadow-lg ring-1 ring-black/5"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="A professional portrait of a senior male executive in a well-tailored dark suit, standing in a brightly lit modern office with subtle Islamic geometric patterns in the background. The lighting is warm and cinematic, reflecting an atmosphere of wisdom and calm authority. The color palette is composed of deep earthy greens and soft creams, maintaining a high-end NGO aesthetic."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYBtaMxTbOmo-NYo3Bk1KWMdaQTLYxwzNbOsC8kKWnysSTKtQ92EVgJa5VqA0ciBhbOKLdtFUug1xuMpzd60F0VbCjkYbsy2QQhLtfPg4adfEtGZP4Cd-zizG38xlftILk72kxRXQUNsi2Cg0Z7NHRn_jPtABCWTSsUuLclR5hlSlUv0U7RImtpByh0DmopkReu0ywNK-J79yD0mcN45pNCRVyC8l2aHr3D8WEi88xDu_V-oB326jPBZQsLdoy9tYIrW0yRiOqH3w"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8"
+                >
+                  <div class="text-on-primary">
+                    <p
+                      class="font-label-md text-secondary-fixed mb-1 uppercase tracking-wider"
+                    >
+                      Chairman
+                    </p>
+                    <h4 class="font-headline-md text-headline-md leading-tight">
+                      Dr. Salman Al-Farsi
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- General Secretary -->
+            <div class="relative group">
+              <div
+                class="aspect-[4/5] overflow-hidden rounded-2xl mb-4 bg-surface-container shadow-lg ring-1 ring-black/5"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="A professional portrait of a female leader in modest professional attire, smiling confidently in a soft-focus institutional setting. The background features light-filled windows and elegant architectural details. The overall mood is approachable yet authoritative, using a sophisticated palette of olive green and muted gold tones to align with the organization's heritage."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4E0iz0ZhpQ9sH0Wg1QkmCNUWxaeAYkRbZXwu5NZTGTcRZTmfzevUlUYfmTP1tclnYxmfZGC22vjq93CEQHCO2OOpfFwY5Sx2rfvNCmWrcxyiwY1OkbigEkfAPu-Hi-8JlK7xa7WNBp8c5cedKnmSlp9b5hHJU31dsnDaAddhKHUVj_VA0_dWs7nOrSddTWnLKHZ6Qu2-mdc-AztiCdohvzk5CPm60pkGFlJ7EppUSvSQUNkrlkTreIt96rDgv05550Wa5sapq558"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8"
+                >
+                  <div class="text-on-primary">
+                    <p
+                      class="font-label-md text-secondary-fixed mb-1 uppercase tracking-wider"
+                    >
+                      General Secretary
+                    </p>
+                    <h4 class="font-headline-md text-headline-md leading-tight">
+                      Zainab Rahman
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Treasurer -->
+            <div class="relative group">
+              <div
+                class="aspect-[4/5] overflow-hidden rounded-2xl mb-4 bg-surface-container shadow-lg ring-1 ring-black/5"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="A dignified male professional in a smart blazer, captured in a thoughtful pose within a high-end library or study environment. Soft ambient light illuminates his face, highlighting a sense of responsibility and financial stewardship. The setting is luxurious yet grounded, with a color scheme dominated by deep greens and natural wood textures."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0btCv7O01wIeQbTfSzzfl_WwobViYVkL7ZawvNPslUnOG-uDW5e_LABHk9FRGFDQKlM_c5Q5hiEFAR5O7zdFTlQH-PEGi-qJWkcLCWoLH68lFYj-7_Ma1Pvl096tDVnVKb8cwf4YTXgLdvuZlLZjCpETR_ANZRQHYoRpN1uzPG_HeQpjWKbSSpjAmm1Zto3_dmH4zMLAnY8ltdSLOpl0ty_Hf1pm26GyY9mk3zCpiFooJDLWXDxBPf1xHoD3fRqEhPiHZ_uXlUY4"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8"
+                >
+                  <div class="text-on-primary">
+                    <p
+                      class="font-label-md text-secondary-fixed mb-1 uppercase tracking-wider"
+                    >
+                      Treasurer
+                    </p>
+                    <h4 class="font-headline-md text-headline-md leading-tight">
+                      Ibrahim Khalid
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Executive Team (The Tighter Grid) -->
+          <div class="bg-surface-container-low rounded-3xl p-8 md:p-12">
+            <h3
+              class="font-headline-md text-headline-md text-primary mb-10 border-l-4 border-secondary-fixed-dim pl-6"
+            >
+              Core Management Team
+            </h3>
+            <div
+              class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-8"
+            >
+              <!-- Member 1 -->
+              <div class="text-center group">
+                <div
+                  class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="A close-up headshot of a male team member with a friendly and professional expression, set against a clean, off-white background. The lighting is soft and even, highlighting a approachable personality. The visual style is consistent with high-end corporate photography for NGOs, emphasizing clarity and human connection."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3f4ovgvU1NacuBJKUAXXLPIZOKopSjYk0Sz13XkB5QY-QgjmQOmt680aCS1CrF_7MLF8-USTvzNkwQeAzseJRC4d2uECFzMvg7QGD5Q8yXaEGX1dA414mzuRKxkmzm6_QV42GsA6Q8obwthZ19aUgk3yLkv3Wwd--56xosTafp-53BntiVaUqm7RENV98LgJwmns7xC3Hkr-SGPOO-mO2LfyRr8oizaT_JF7ngeeXqz6530XR5fMSxjDiM2pRr2BMoxnpYgI0RAc"
+                  />
+                </div>
+                <h5 class="font-headline-md text-[18px] text-primary">
+                  Omar Sheikh
+                </h5>
+                <p class="font-label-md text-on-surface-variant">
+                  Programs Director
                 </p>
-</div>
-</section>
-<!-- Programs Overview (Bento Grid Style) -->
-<section class="py-section-padding px-gutter bg-surface-container-low">
-<div class="max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-<div>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Programs &amp; Services</h2>
-<p class="font-body-md text-on-surface-variant max-w-xl">Comprehensive support systems designed to uplift every segment of our community through specialized initiatives.</p>
-</div>
-<div class="flex gap-2">
-<div class="w-12 h-[2px] bg-secondary-fixed-dim self-center mb-2"></div>
-<span class="font-label-md text-secondary">IMPACT AREAS</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
-<!-- Education Support -->
-<div class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2">
-<div class="bg-primary-fixed text-primary w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="school">school</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Education Support</h3>
-<p class="font-body-md text-on-surface-variant">Providing academic resources, tutoring, and literacy programs to ensure no child is left behind in their educational journey.</p>
-</div>
-<!-- Scholarship Programs -->
-<div class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2">
-<div class="bg-secondary-container text-on-secondary-container w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Scholarships</h3>
-<p class="font-body-md text-on-surface-variant">Financial grants for meritorious students from underserved backgrounds to pursue higher education and professional degrees.</p>
-</div>
-<!-- Food Distribution -->
-<div class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2">
-<div class="bg-tertiary-fixed text-on-tertiary-fixed w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Food Security</h3>
-<p class="font-body-md text-on-surface-variant">Monthly ration distribution and community kitchens dedicated to eradicating hunger within our local vulnerable populations.</p>
-</div>
-<!-- Orphan Care -->
-<div class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2">
-<div class="bg-primary-fixed text-primary w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="child_care">child_care</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Orphan Care</h3>
-<p class="font-body-md text-on-surface-variant">Holistic sponsorship including housing, healthcare, and emotional support for children who have lost their guardians.</p>
-</div>
-<!-- Community Welfare -->
-<div class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2">
-<div class="bg-secondary-container text-on-secondary-container w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="groups">groups</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Community Welfare</h3>
-<p class="font-body-md text-on-surface-variant">Legal aid, housing assistance, and crisis intervention services for families facing immediate socio-economic threats.</p>
-</div>
-<!-- Skill Development -->
-<div class="glass-card p-6 rounded-xl border border-outline-variant hover:border-secondary transition-all group lg:col-span-2">
-<div class="bg-tertiary-fixed text-on-tertiary-fixed w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Skill Training</h3>
-<p class="font-body-md text-on-surface-variant">Vocational training centers focused on equipping youth and women with marketable skills for economic independence.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Leadership & Team Section -->
-<section class="py-section-padding px-gutter bg-surface">
-<div class="max-w-container-max mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Leadership &amp; Board</h2>
-<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Guided by a diverse board of professionals committed to transparency, excellence, and ethical governance.</p>
-</div>
-<!-- Primary Leadership (The Top 3) -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-<!-- Chairman -->
-<div class="relative group">
-<div class="aspect-[4/5] overflow-hidden rounded-2xl mb-4 bg-surface-container shadow-lg ring-1 ring-black/5">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional portrait of a senior male executive in a well-tailored dark suit, standing in a brightly lit modern office with subtle Islamic geometric patterns in the background. The lighting is warm and cinematic, reflecting an atmosphere of wisdom and calm authority. The color palette is composed of deep earthy greens and soft creams, maintaining a high-end NGO aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYBtaMxTbOmo-NYo3Bk1KWMdaQTLYxwzNbOsC8kKWnysSTKtQ92EVgJa5VqA0ciBhbOKLdtFUug1xuMpzd60F0VbCjkYbsy2QQhLtfPg4adfEtGZP4Cd-zizG38xlftILk72kxRXQUNsi2Cg0Z7NHRn_jPtABCWTSsUuLclR5hlSlUv0U7RImtpByh0DmopkReu0ywNK-J79yD0mcN45pNCRVyC8l2aHr3D8WEi88xDu_V-oB326jPBZQsLdoy9tYIrW0yRiOqH3w"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
-<div class="text-on-primary">
-<p class="font-label-md text-secondary-fixed mb-1 uppercase tracking-wider">Chairman</p>
-<h4 class="font-headline-md text-headline-md leading-tight">Dr. Salman Al-Farsi</h4>
-</div>
-</div>
-</div>
-</div>
-<!-- General Secretary -->
-<div class="relative group">
-<div class="aspect-[4/5] overflow-hidden rounded-2xl mb-4 bg-surface-container shadow-lg ring-1 ring-black/5">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional portrait of a female leader in modest professional attire, smiling confidently in a soft-focus institutional setting. The background features light-filled windows and elegant architectural details. The overall mood is approachable yet authoritative, using a sophisticated palette of olive green and muted gold tones to align with the organization's heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4E0iz0ZhpQ9sH0Wg1QkmCNUWxaeAYkRbZXwu5NZTGTcRZTmfzevUlUYfmTP1tclnYxmfZGC22vjq93CEQHCO2OOpfFwY5Sx2rfvNCmWrcxyiwY1OkbigEkfAPu-Hi-8JlK7xa7WNBp8c5cedKnmSlp9b5hHJU31dsnDaAddhKHUVj_VA0_dWs7nOrSddTWnLKHZ6Qu2-mdc-AztiCdohvzk5CPm60pkGFlJ7EppUSvSQUNkrlkTreIt96rDgv05550Wa5sapq558"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
-<div class="text-on-primary">
-<p class="font-label-md text-secondary-fixed mb-1 uppercase tracking-wider">General Secretary</p>
-<h4 class="font-headline-md text-headline-md leading-tight">Zainab Rahman</h4>
-</div>
-</div>
-</div>
-</div>
-<!-- Treasurer -->
-<div class="relative group">
-<div class="aspect-[4/5] overflow-hidden rounded-2xl mb-4 bg-surface-container shadow-lg ring-1 ring-black/5">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A dignified male professional in a smart blazer, captured in a thoughtful pose within a high-end library or study environment. Soft ambient light illuminates his face, highlighting a sense of responsibility and financial stewardship. The setting is luxurious yet grounded, with a color scheme dominated by deep greens and natural wood textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0btCv7O01wIeQbTfSzzfl_WwobViYVkL7ZawvNPslUnOG-uDW5e_LABHk9FRGFDQKlM_c5Q5hiEFAR5O7zdFTlQH-PEGi-qJWkcLCWoLH68lFYj-7_Ma1Pvl096tDVnVKb8cwf4YTXgLdvuZlLZjCpETR_ANZRQHYoRpN1uzPG_HeQpjWKbSSpjAmm1Zto3_dmH4zMLAnY8ltdSLOpl0ty_Hf1pm26GyY9mk3zCpiFooJDLWXDxBPf1xHoD3fRqEhPiHZ_uXlUY4"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
-<div class="text-on-primary">
-<p class="font-label-md text-secondary-fixed mb-1 uppercase tracking-wider">Treasurer</p>
-<h4 class="font-headline-md text-headline-md leading-tight">Ibrahim Khalid</h4>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Executive Team (The Tighter Grid) -->
-<div class="bg-surface-container-low rounded-3xl p-8 md:p-12">
-<h3 class="font-headline-md text-headline-md text-primary mb-10 border-l-4 border-secondary-fixed-dim pl-6">Core Management Team</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-8">
-<!-- Member 1 -->
-<div class="text-center group">
-<div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all">
-<img class="w-full h-full object-cover" data-alt="A close-up headshot of a male team member with a friendly and professional expression, set against a clean, off-white background. The lighting is soft and even, highlighting a approachable personality. The visual style is consistent with high-end corporate photography for NGOs, emphasizing clarity and human connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3f4ovgvU1NacuBJKUAXXLPIZOKopSjYk0Sz13XkB5QY-QgjmQOmt680aCS1CrF_7MLF8-USTvzNkwQeAzseJRC4d2uECFzMvg7QGD5Q8yXaEGX1dA414mzuRKxkmzm6_QV42GsA6Q8obwthZ19aUgk3yLkv3Wwd--56xosTafp-53BntiVaUqm7RENV98LgJwmns7xC3Hkr-SGPOO-mO2LfyRr8oizaT_JF7ngeeXqz6530XR5fMSxjDiM2pRr2BMoxnpYgI0RAc"/>
-</div>
-<h5 class="font-headline-md text-[18px] text-primary">Omar Sheikh</h5>
-<p class="font-label-md text-on-surface-variant">Programs Director</p>
-</div>
-<!-- Member 2 -->
-<div class="text-center group">
-<div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all">
-<img class="w-full h-full object-cover" data-alt="A close-up headshot of a female team member in professional attire, featuring a minimalist and elegant background. The lighting is natural and bright, creating an airy and modern aesthetic. The focus is on a professional and warm demeanor, suitable for a leadership team display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7wZ6JtslcOxKrd5iD9XN-cixqPVbMmjfDz-X_YHaykodrzAdYqUx8BxNWjxUFAKVTw6T6LUfBz01801bHkj9b0SXIHpzDKEjavAOQvvMqRnOqhfwEP0_6vBzXO5CCSWFrfEhCObQ0QQFabe_SdRUrcCBfSX6NDxeUYUsWKFtflQhNL0TeiYv0oRan5xbH9Fx3QVbuG6Do8iiQZJgRBrGOKddmtgdngYHjPtqeeHt1NmxnGdhn05Ys07CWW0pbOQz5Bvmc-q8-Nqg"/>
-</div>
-<h5 class="font-headline-md text-[18px] text-primary">Mariam Aziz</h5>
-<p class="font-label-md text-on-surface-variant">Welfare Head</p>
-</div>
-<!-- Member 3 -->
-<div class="text-center group">
-<div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all">
-<img class="w-full h-full object-cover" data-alt="A clean professional headshot of a male staff member with a modern hairstyle and a sharp gaze. The background is a soft beige tone, matching the organization's warm color palette. The image conveys a sense of technical expertise and dedication to the mission." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg9ch2e_Q5rDJJGWdFawu1Cn8P7-PUYyqYHuczcwtHxE2QWHq_EkDc_VNAs5Yd1GbVCJ579A6VwmR6fK2Yf0djx6CvEU_BUfbcw2kcFD8sCVGleEWOHFsTBHdp5U8vjUYR2QFLYcEV86_HiOmJ2UnegfAYmyr_S-jOR_yERFzXyxAh09GNr125A3pp84pAG7tnU7h3QRxgASZX1O3m4dwRU2TaSXke1c2zMnbNp24IX1fo0R3aA9EUxCh4dI44WRjO4HQYZ4tcJVk"/>
-</div>
-<h5 class="font-headline-md text-[18px] text-primary">Yusuf Ali</h5>
-<p class="font-label-md text-on-surface-variant">Operations Lead</p>
-</div>
-<!-- Member 4 -->
-<div class="text-center group">
-<div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all">
-<img class="w-full h-full object-cover" data-alt="A professional headshot of a female employee with a welcoming smile, wearing a subtle olive-colored headscarf. The setting is bright and professional, utilizing soft directional light to create depth. The style is sophisticated and aligns perfectly with the NGO's heritage-modern visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2oP9NjXOmkFJIAmpIhooOLgDsd81c6_dueNhOUgodxvaYHWw1tRzAluIpGmXCid-iWnU2HuoD9iqz4Co6TAcNr0hnpjUzT3UNRBwFyUplROa_SkWI9K9QKYRtu3oigvZAXErLJd9ZRBqKqNrg1kzy9gphoz7jWbwhuuoBZQpmd9UY5VkgdKgCv3O_pMaIcTjZ05XZycQkjUqvgXHbIAO9CGWY8-QcT2GCvC2k3wjGC_fe2cjDFZ_omNhsKoinyGL_1QQjI3Sdri0"/>
-</div>
-<h5 class="font-headline-md text-[18px] text-primary">Fatima Zahra</h5>
-<p class="font-label-md text-on-surface-variant">Education Head</p>
-</div>
-<!-- Member 5 -->
-<div class="text-center group">
-<div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all">
-<img class="w-full h-full object-cover" data-alt="A portrait of a male team member with a professional and friendly expression. The background is slightly blurred, showcasing a hint of architectural geometry that mirrors the NGO's brand patterns. The color tone is warm and inviting, emphasizing community trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUdI_CTUQWC0K1lXDhce432c5skIIV62dlIvHPyFyd9_W7Xwa6vpdbnrXL4aYuWiDeQ4HHgUorvGc-e3WYtm9Y8GYIrZ1rR--mILKHeALzKJ9y6XDirB9TKgmrDy4KFHKg8reu-W92MDB4yCQUyV3sdFAwaAZsjaSUBnZsWdvtyOb_fzsbl1c4yIRbHpj_vJF09ENbmfrvCeO7pAmNmCn3KsvrDG3uxuIqNKNTAz03CYSVyrQUicCAZqVFLZ_UNzatsy_EPf4sJi0"/>
-</div>
-<h5 class="font-headline-md text-[18px] text-primary">Bilal Ahmed</h5>
-<p class="font-label-md text-on-surface-variant">External Relations</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-section-padding px-gutter">
-<div class="max-w-container-max mx-auto bg-primary rounded-[40px] p-12 md:p-20 relative overflow-hidden text-center">
-<div class="absolute inset-0 pattern-overlay opacity-10"></div>
-<div class="relative z-10">
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-8">Join Our Mission</h2>
-<p class="font-body-lg text-on-primary/80 max-w-2xl mx-auto mb-10">Whether through your time, expertise, or financial support, you can help us build a stronger, more resilient community.</p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<button class="bg-secondary-fixed text-on-secondary-fixed px-10 py-4 rounded-full font-label-md hover:bg-secondary-container transition-all">Volunteer With Us</button>
-<button class="border border-on-primary/30 text-on-primary px-10 py-4 rounded-full font-label-md hover:bg-white/10 transition-all">View Annual Reports</button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-primary w-full">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto text-on-primary">
-<div class="md:col-span-1">
-<div class="flex items-center gap-3 mb-6">
-<img alt="Logo" class="h-10 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFYoVrrb4X3i2hl3hV0xEtOo4BBeLk6scW_61nI3Gs1c2xFDgFNEB9PL8HgFSgdU1uiKMrLZSQnkQMsa84bGyzeJ7N_5XChKQqeAF_d36a9aOXcNitndFh6w1kUuvAXUpaBJS25hkjKXJuhq4b9WUcltBzqV17pHdtg_hTldZ18zG6UmWIqaFIRW1z5wo0Na6IPUE0unJ2FEuC4iclq2eAMxj1ze8KE1GBJcH6uP_9GhS-B0Ux9t2HyKq5k51MrYSpcJ6a67MaVbE"/>
-<span class="font-headline-md text-headline-md text-on-primary">AL-HIKMAH</span>
-</div>
-<p class="font-body-md text-on-primary/80 mb-6">Empowering communities through wisdom, education, and compassionate action since 2012.</p>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-label-md text-secondary-fixed mb-2">QUICK LINKS</h4>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">About Us</a>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">Our Work</a>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">Impact Stories</a>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">News &amp; Media</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-label-md text-secondary-fixed mb-2">GOVERNANCE</h4>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">Privacy Policy</a>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">Terms of Service</a>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">Annual Reports</a>
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md" href="#">Volunteer Portal</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-label-md text-secondary-fixed mb-2">CONTACT</h4>
-<p class="text-on-primary/80 font-body-md">info@al-hikmah.org</p>
-<p class="text-on-primary/80 font-body-md">+1 (234) 567-890</p>
-<div class="flex gap-4 mt-2">
-<a class="w-8 h-8 rounded-full border border-on-primary/30 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all" href="#">
-<span class="material-symbols-outlined text-[18px]" data-icon="public">public</span>
-</a>
-<a class="w-8 h-8 rounded-full border border-on-primary/30 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all" href="#">
-<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
-</a>
-</div>
-</div>
-</div>
-<div class="max-w-container-max mx-auto px-gutter py-6 border-t border-white/5 text-center">
-<p class="font-body-md text-on-primary/60">© 2024 Al-Hikmah Foundation. All rights reserved.</p>
-</div>
-</footer>
-<script>
-        // Simple scroll behavior for top nav
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 20) {
-                nav.classList.add('shadow-md', 'py-2');
-                nav.classList.remove('py-4');
-            } else {
-                nav.classList.remove('shadow-md', 'py-2');
-                nav.classList.add('py-4');
-            }
-        });
+              </div>
+              <!-- Member 2 -->
+              <div class="text-center group">
+                <div
+                  class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="A close-up headshot of a female team member in professional attire, featuring a minimalist and elegant background. The lighting is natural and bright, creating an airy and modern aesthetic. The focus is on a professional and warm demeanor, suitable for a leadership team display."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7wZ6JtslcOxKrd5iD9XN-cixqPVbMmjfDz-X_YHaykodrzAdYqUx8BxNWjxUFAKVTw6T6LUfBz01801bHkj9b0SXIHpzDKEjavAOQvvMqRnOqhfwEP0_6vBzXO5CCSWFrfEhCObQ0QQFabe_SdRUrcCBfSX6NDxeUYUsWKFtflQhNL0TeiYv0oRan5xbH9Fx3QVbuG6Do8iiQZJgRBrGOKddmtgdngYHjPtqeeHt1NmxnGdhn05Ys07CWW0pbOQz5Bvmc-q8-Nqg"
+                  />
+                </div>
+                <h5 class="font-headline-md text-[18px] text-primary">
+                  Mariam Aziz
+                </h5>
+                <p class="font-label-md text-on-surface-variant">
+                  Welfare Head
+                </p>
+              </div>
+              <!-- Member 3 -->
+              <div class="text-center group">
+                <div
+                  class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="A clean professional headshot of a male staff member with a modern hairstyle and a sharp gaze. The background is a soft beige tone, matching the organization's warm color palette. The image conveys a sense of technical expertise and dedication to the mission."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg9ch2e_Q5rDJJGWdFawu1Cn8P7-PUYyqYHuczcwtHxE2QWHq_EkDc_VNAs5Yd1GbVCJ579A6VwmR6fK2Yf0djx6CvEU_BUfbcw2kcFD8sCVGleEWOHFsTBHdp5U8vjUYR2QFLYcEV86_HiOmJ2UnegfAYmyr_S-jOR_yERFzXyxAh09GNr125A3pp84pAG7tnU7h3QRxgASZX1O3m4dwRU2TaSXke1c2zMnbNp24IX1fo0R3aA9EUxCh4dI44WRjO4HQYZ4tcJVk"
+                  />
+                </div>
+                <h5 class="font-headline-md text-[18px] text-primary">
+                  Yusuf Ali
+                </h5>
+                <p class="font-label-md text-on-surface-variant">
+                  Operations Lead
+                </p>
+              </div>
+              <!-- Member 4 -->
+              <div class="text-center group">
+                <div
+                  class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="A professional headshot of a female employee with a welcoming smile, wearing a subtle olive-colored headscarf. The setting is bright and professional, utilizing soft directional light to create depth. The style is sophisticated and aligns perfectly with the NGO's heritage-modern visual identity."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2oP9NjXOmkFJIAmpIhooOLgDsd81c6_dueNhOUgodxvaYHWw1tRzAluIpGmXCid-iWnU2HuoD9iqz4Co6TAcNr0hnpjUzT3UNRBwFyUplROa_SkWI9K9QKYRtu3oigvZAXErLJd9ZRBqKqNrg1kzy9gphoz7jWbwhuuoBZQpmd9UY5VkgdKgCv3O_pMaIcTjZ05XZycQkjUqvgXHbIAO9CGWY8-QcT2GCvC2k3wjGC_fe2cjDFZ_omNhsKoinyGL_1QQjI3Sdri0"
+                  />
+                </div>
+                <h5 class="font-headline-md text-[18px] text-primary">
+                  Fatima Zahra
+                </h5>
+                <p class="font-label-md text-on-surface-variant">
+                  Education Head
+                </p>
+              </div>
+              <!-- Member 5 -->
+              <div class="text-center group">
+                <div
+                  class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-outline-variant group-hover:ring-secondary transition-all"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="A portrait of a male team member with a professional and friendly expression. The background is slightly blurred, showcasing a hint of architectural geometry that mirrors the NGO's brand patterns. The color tone is warm and inviting, emphasizing community trust."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUdI_CTUQWC0K1lXDhce432c5skIIV62dlIvHPyFyd9_W7Xwa6vpdbnrXL4aYuWiDeQ4HHgUorvGc-e3WYtm9Y8GYIrZ1rR--mILKHeALzKJ9y6XDirB9TKgmrDy4KFHKg8reu-W92MDB4yCQUyV3sdFAwaAZsjaSUBnZsWdvtyOb_fzsbl1c4yIRbHpj_vJF09ENbmfrvCeO7pAmNmCn3KsvrDG3uxuIqNKNTAz03CYSVyrQUicCAZqVFLZ_UNzatsy_EPf4sJi0"
+                  />
+                </div>
+                <h5 class="font-headline-md text-[18px] text-primary">
+                  Bilal Ahmed
+                </h5>
+                <p class="font-label-md text-on-surface-variant">
+                  External Relations
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-section-padding px-gutter">
+        <div
+          class="max-w-container-max mx-auto bg-primary rounded-[40px] p-12 md:p-20 relative overflow-hidden text-center"
+        >
+          <div class="absolute inset-0 pattern-overlay opacity-10"></div>
+          <div class="relative z-10">
+            <h2
+              class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-8"
+            >
+              Join Our Mission
+            </h2>
+            <p class="font-body-lg text-on-primary/80 max-w-2xl mx-auto mb-10">
+              Whether through your time, expertise, or financial support, you
+              can help us build a stronger, more resilient community.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <button
+                class="bg-secondary-fixed text-on-secondary-fixed px-10 py-4 rounded-full font-label-md hover:bg-secondary-container transition-all"
+              >
+                Volunteer With Us
+              </button>
+              <button
+                class="border border-on-primary/30 text-on-primary px-10 py-4 rounded-full font-label-md hover:bg-white/10 transition-all"
+              >
+                View Annual Reports
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary w-full">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto text-on-primary"
+      >
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <img
+              alt="Logo"
+              class="h-10 brightness-0 invert"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFYoVrrb4X3i2hl3hV0xEtOo4BBeLk6scW_61nI3Gs1c2xFDgFNEB9PL8HgFSgdU1uiKMrLZSQnkQMsa84bGyzeJ7N_5XChKQqeAF_d36a9aOXcNitndFh6w1kUuvAXUpaBJS25hkjKXJuhq4b9WUcltBzqV17pHdtg_hTldZ18zG6UmWIqaFIRW1z5wo0Na6IPUE0unJ2FEuC4iclq2eAMxj1ze8KE1GBJcH6uP_9GhS-B0Ux9t2HyKq5k51MrYSpcJ6a67MaVbE"
+            />
+            <span class="font-headline-md text-headline-md text-on-primary"
+              >AL-HIKMAH</span
+            >
+          </div>
+          <p class="font-body-md text-on-primary/80 mb-6">
+            Empowering communities through wisdom, education, and compassionate
+            action since 2012.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-label-md text-secondary-fixed mb-2">QUICK LINKS</h4>
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >About Us</a
+          >
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >Our Work</a
+          >
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >Impact Stories</a
+          >
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >News &amp; Media</a
+          >
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-label-md text-secondary-fixed mb-2">GOVERNANCE</h4>
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >Annual Reports</a
+          >
+          <a
+            class="text-on-primary/80 hover:text-secondary-fixed transition-colors font-body-md"
+            href="#"
+            >Volunteer Portal</a
+          >
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-label-md text-secondary-fixed mb-2">CONTACT</h4>
+          <p class="text-on-primary/80 font-body-md">info@al-hikmah.org</p>
+          <p class="text-on-primary/80 font-body-md">+1 (234) 567-890</p>
+          <div class="flex gap-4 mt-2">
+            <a
+              class="w-8 h-8 rounded-full border border-on-primary/30 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all"
+              href="#"
+            >
+              <span
+                class="material-symbols-outlined text-[18px]"
+                data-icon="public"
+                >public</span
+              >
+            </a>
+            <a
+              class="w-8 h-8 rounded-full border border-on-primary/30 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all"
+              href="#"
+            >
+              <span
+                class="material-symbols-outlined text-[18px]"
+                data-icon="share"
+                >share</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-container-max mx-auto px-gutter py-6 border-t border-white/5 text-center"
+      >
+        <p class="font-body-md text-on-primary/60">
+          © 2024 Al-Hikmah Foundation. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Simple scroll behavior for top nav
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 20) {
+          nav.classList.add("shadow-md", "py-2");
+          nav.classList.remove("py-4");
+        } else {
+          nav.classList.remove("shadow-md", "py-2");
+          nav.classList.add("py-4");
+        }
+      });
     </script>
-</body></html>
+  </body>
+</html>

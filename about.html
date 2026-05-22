@@ -1,374 +1,700 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | AL-HIKMAH Foundation</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(251, 249, 247, 0.7);
-            backdrop-filter: blur(20px);
-            border: 0.5px solid rgba(39, 59, 47, 0.1);
-        }
-        .pattern-bg {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 12.5L45 15l-12.5 2.5L30 30l-2.5-12.5L15 15l12.5-2.5z' fill='%23273b2f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-        .timeline-line {
-            background: linear-gradient(to bottom, transparent, #273b2f 15%, #273b2f 85%, transparent);
-        }
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us | AL-HIKMAH Foundation</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-card {
+        background: rgba(251, 249, 247, 0.7);
+        backdrop-filter: blur(20px);
+        border: 0.5px solid rgba(39, 59, 47, 0.1);
+      }
+      .pattern-bg {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 12.5L45 15l-12.5 2.5L30 30l-2.5-12.5L15 15l12.5-2.5z' fill='%23273b2f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+      .timeline-line {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          #273b2f 15%,
+          #273b2f 85%,
+          transparent
+        );
+      }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "secondary-fixed-dim": "#e9c176",
-                        "error": "#ba1a1a",
-                        "inverse-surface": "#30312f",
-                        "background": "#fbf9f7",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#adc4b4",
-                        "on-secondary-fixed-variant": "#5d4201",
-                        "outline-variant": "#c2c8c2",
-                        "on-surface": "#1b1c1b",
-                        "surface-variant": "#e3e2e0",
-                        "surface-bright": "#fbf9f7",
-                        "tertiary": "#4b3031",
-                        "surface-container-highest": "#e3e2e0",
-                        "tertiary-fixed-dim": "#e5bdbd",
-                        "surface-container-high": "#e9e8e5",
-                        "inverse-primary": "#b5ccbb",
-                        "on-secondary-fixed": "#261900",
-                        "primary-fixed": "#d0e8d7",
-                        "on-surface-variant": "#424844",
-                        "surface-tint": "#4e6356",
-                        "inverse-on-surface": "#f2f0ee",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-container": "#3d5245",
-                        "surface": "#fbf9f7",
-                        "on-tertiary-fixed": "#2c1516",
-                        "on-secondary": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "surface-dim": "#dbdad7",
-                        "on-tertiary": "#ffffff",
-                        "on-tertiary-container": "#deb5b6",
-                        "primary-fixed-dim": "#b5ccbb",
-                        "on-background": "#1b1c1b",
-                        "on-secondary-container": "#785a1a",
-                        "on-error": "#ffffff",
-                        "surface-container": "#efeeeb",
-                        "secondary": "#775a19",
-                        "error-container": "#ffdad6",
-                        "primary": "#273b2f",
-                        "on-primary-fixed": "#0b1f15",
-                        "tertiary-container": "#644647",
-                        "secondary-container": "#fed488",
-                        "secondary-fixed": "#ffdea5",
-                        "tertiary-fixed": "#ffdada",
-                        "surface-container-low": "#f5f3f1",
-                        "on-primary-fixed-variant": "#374b3f",
-                        "outline": "#737873",
-                        "on-tertiary-fixed-variant": "#5c3f40"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "section-padding": "80px",
-                        "unit": "8px",
-                        "margin-mobile": "20px",
-                        "container-max": "1280px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Manrope"],
-                        "body-md": ["Manrope"],
-                        "headline-lg": ["Manrope"],
-                        "headline-md": ["Manrope"],
-                        "display-lg": ["Manrope"],
-                        "label-md": ["Manrope"],
-                        "display-lg-mobile": ["Manrope"]
-                    },
-                    "fontSize": {
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
-                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
-                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "800"}]
-                    }
-                }
-            }
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#e9c176",
+              error: "#ba1a1a",
+              "inverse-surface": "#30312f",
+              background: "#fbf9f7",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#adc4b4",
+              "on-secondary-fixed-variant": "#5d4201",
+              "outline-variant": "#c2c8c2",
+              "on-surface": "#1b1c1b",
+              "surface-variant": "#e3e2e0",
+              "surface-bright": "#fbf9f7",
+              tertiary: "#4b3031",
+              "surface-container-highest": "#e3e2e0",
+              "tertiary-fixed-dim": "#e5bdbd",
+              "surface-container-high": "#e9e8e5",
+              "inverse-primary": "#b5ccbb",
+              "on-secondary-fixed": "#261900",
+              "primary-fixed": "#d0e8d7",
+              "on-surface-variant": "#424844",
+              "surface-tint": "#4e6356",
+              "inverse-on-surface": "#f2f0ee",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#3d5245",
+              surface: "#fbf9f7",
+              "on-tertiary-fixed": "#2c1516",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dbdad7",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#deb5b6",
+              "primary-fixed-dim": "#b5ccbb",
+              "on-background": "#1b1c1b",
+              "on-secondary-container": "#785a1a",
+              "on-error": "#ffffff",
+              "surface-container": "#efeeeb",
+              secondary: "#775a19",
+              "error-container": "#ffdad6",
+              primary: "#273b2f",
+              "on-primary-fixed": "#0b1f15",
+              "tertiary-container": "#644647",
+              "secondary-container": "#fed488",
+              "secondary-fixed": "#ffdea5",
+              "tertiary-fixed": "#ffdada",
+              "surface-container-low": "#f5f3f1",
+              "on-primary-fixed-variant": "#374b3f",
+              outline: "#737873",
+              "on-tertiary-fixed-variant": "#5c3f40",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "section-padding": "80px",
+              unit: "8px",
+              "margin-mobile": "20px",
+              "container-max": "1280px",
+            },
+            fontFamily: {
+              "body-lg": ["Manrope"],
+              "body-md": ["Manrope"],
+              "headline-lg": ["Manrope"],
+              "headline-md": ["Manrope"],
+              "display-lg": ["Manrope"],
+              "label-md": ["Manrope"],
+              "display-lg-mobile": ["Manrope"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+              "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-lg-mobile": [
+                "36px",
+                { lineHeight: "1.2", fontWeight: "800" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-surface font-body-md pattern-bg selection:bg-secondary-fixed-dim selection:text-on-secondary-fixed"
+  >
+       <!-- Top Navigation Bar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-variant/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out"
+    >
+      <div
+        class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto"
+      >
+        <div
+          class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight"
+        >
+          <img
+            alt="AL-HIKMAH Logo"
+            class="h-12 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"
+          />
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+          <a
+            class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-body-md text-body-md"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="about.html"
+            >About Us</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="team_initiatives.html"
+            >Team & Initiatives</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="gallery.html"
+            >Gallery</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="contact.html"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform"
+        >
+          Donate Now
+        </button>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header
+      class="pt-32 pb-16 px-gutter max-w-container-max mx-auto text-center"
+    >
+      <span
+        class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-4 uppercase tracking-widest"
+        >Knowledge • Virtue • Service</span
+      >
+      <h1
+        class="font-display-lg text-display-lg md:text-display-lg text-primary mb-2"
+      >
+        About Our Foundation
+      </h1>
+      <p
+        class="font-headline-md text-headline-md text-secondary font-medium opacity-80"
+      >
+        ഞങ്ങളെക്കുറിച്ച് (About Us)
+      </p>
+    </header>
+    <!-- Mission & Vision Bento Grid -->
+    <section class="py-12 px-gutter max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div
+          class="md:col-span-7 glass-card rounded-xl p-10 flex flex-col justify-center relative overflow-hidden group transition-all duration-1000 opacity-100 translate-y-0"
+        >
+          <div
+            class="absolute -top-10 -right-10 w-40 h-40 bg-secondary-fixed-dim/20 rounded-full blur-3xl group-hover:bg-secondary-fixed-dim/30 transition-colors"
+          ></div>
+          <div class="relative z-10">
+            <span class="material-symbols-outlined text-primary text-5xl mb-6"
+              >visibility</span
+            >
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-2">
+              Our Vision
+            </h2>
+            <p
+              class="font-headline-md text-headline-md text-secondary mb-6 font-medium opacity-70"
+            >
+              ഞങ്ങളുടെ ദർശനം
+            </p>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-xl"
+            >
+              To be a leading center of excellence in modern education rooted in
+              spiritual values, fostering a generation that excels
+              professionally while remaining anchored in ethical heritage.
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:col-span-5 relative h-80 md:h-auto rounded-xl overflow-hidden shadow-xl"
+        >
+          <img
+            alt="Vision image"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105 transition-all duration-1000 opacity-100 translate-y-0"
+            data-alt="A serene landscape featuring a modern architectural building with traditional Islamic design elements like arches and geometric windows. The scene is bathed in golden hour sunlight, creating long soft shadows and a warm glow. The atmosphere is peaceful and scholarly, reflecting a high-end educational institution's campus. Soft green vegetation frames the view, maintaining an organic and heritage-rich aesthetic."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwXPi87x1pGF_9alwkPKe9zpOMl4_MLWBEBh7XBXs6AwcRtW6S-trlHoE1HSmEnA8g1quJurMLleiD05WNRiAFm9dv7o76WFhzVm_QEUB7t9qlZyC_eDXjmxrxnJHP6BdEuwYjgXVmR2lMkgy09SKIHtXrn4vimyDzm2QYEfC7NStaTlq8C1iJoBgpqTv3-3taLDPAYBl43EaraMvuxApeiYv5J-DcD3TQgLQ3vlMPjo7MjFTHjGpowTYfxTJI-1cbqMDffaIUBcQ"
+          />
+        </div>
+        <div
+          class="md:col-span-5 relative h-80 md:h-auto rounded-xl overflow-hidden shadow-xl order-last md:order-none"
+        >
+          <img
+            alt="Mission image"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105 transition-all duration-1000 opacity-100 translate-y-0"
+            data-alt="An overhead shot of a modern, bright classroom where diverse students are collaborating around a circular table. The room is filled with natural light, highlighting soft beige walls and sleek wooden furniture. The atmosphere is professional yet warm and accessible. The visual style is crisp and high-key, emphasizing a clean, contemporary learning environment focused on collective progress."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJGcS68g0gkP27pc6D0_NBCtghMuGfy762JqTObHQenpga56PWSqwb4fVCnepdwtFalurZ_ZMioAv3TFzK26cas_lLtxVyQDFX6basSSKPxrifwj8xH3JlI6JcfqISyd4w6L5ulAaCgnJJtiX5kdhYjebYg4FydbZh5DhEU-nPryjahLPio8VwmLitDwUx-IWKG5QGUFd8jhEkDJDLyveomFC4ZrP9IvNkZFr_8OrZbAiRarVZJ3cYlOH9S9nBRTzpkzWsf42J-gw"
+          />
+        </div>
+        <div
+          class="md:col-span-7 bg-primary rounded-xl p-10 flex flex-col justify-center relative overflow-hidden text-on-primary"
+        >
+          <div
+            class="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"
+          ></div>
+          <div class="relative z-10">
+            <span
+              class="material-symbols-outlined text-secondary-fixed-dim text-5xl mb-6"
+              >rocket_launch</span
+            >
+            <h2 class="font-headline-lg text-headline-lg mb-2">Our Mission</h2>
+            <p
+              class="font-headline-md text-headline-md text-primary-fixed mb-6 font-medium opacity-80"
+            >
+              ഞങ്ങളുടെ ദൗത്യം
+            </p>
+            <p class="font-body-lg text-body-lg text-primary-fixed max-w-xl">
+              Empowering the community through holistic educational programs,
+              compassionate social welfare initiatives, and the preservation of
+              cultural heritage for a sustainable and harmonious future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Story Timeline -->
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-headline-lg text-headline-lg text-primary">
+          Our Story
+        </h2>
+        <p
+          class="font-headline-md text-headline-md text-secondary font-medium opacity-70"
+        >
+          ഞങ്ങളുടെ ചരിത്രം
+        </p>
+      </div>
+      <div class="relative">
+        <!-- Vertical Line -->
+        <div
+          class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 timeline-line"
+        ></div>
+        <!-- Timeline Item 1 -->
+        <div
+          class="relative mb-16 md:mb-24 flex flex-col md:flex-row items-center justify-between"
+        >
+          <div class="md:w-5/12 text-center md:text-right mb-8 md:mb-0">
+            <div
+              class="glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-1000 opacity-100 translate-y-0"
+            >
+              <span
+                class="font-display-lg text-display-lg text-secondary-fixed-dim block mb-2"
+                >2010</span
+              >
+              <h3 class="font-headline-md text-headline-md text-primary mb-2">
+                The Humble Beginning
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Founded by a group of visionaries in a small rented space with
+                15 students, aiming to bridge the gap between spiritual and
+                academic knowledge.
+              </p>
+            </div>
+          </div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"
+          ></div>
+          <div class="md:w-5/12"></div>
+        </div>
+        <!-- Timeline Item 2 -->
+        <div
+          class="relative mb-16 md:mb-24 flex flex-col md:flex-row items-center justify-between"
+        >
+          <div class="md:w-5/12 order-last md:order-none"></div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"
+          ></div>
+          <div class="md:w-5/12 text-center md:text-left mb-8 md:mb-0">
+            <div
+              class="glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-1000 opacity-100 translate-y-0"
+            >
+              <span
+                class="font-display-lg text-display-lg text-secondary-fixed-dim block mb-2"
+                >2015</span
+              >
+              <h3 class="font-headline-md text-headline-md text-primary mb-2">
+                Expansion Phase
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Inauguration of our primary campus. Introduction of the
+                "Scholar-Professional" track, integrating specialized career
+                coaching with ethics.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Timeline Item 3 -->
+        <div
+          class="relative flex flex-col md:flex-row items-center justify-between"
+        >
+          <div class="md:w-5/12 text-center md:text-right mb-8 md:mb-0">
+            <div
+              class="glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-1000 opacity-100 translate-y-0"
+            >
+              <span
+                class="font-display-lg text-display-lg text-secondary-fixed-dim block mb-2"
+                >2023</span
+              >
+              <h3 class="font-headline-md text-headline-md text-primary mb-2">
+                Digital Innovation
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Launching the global Al-Hikmah online portal, reaching thousands
+                of learners across three continents with heritage courses.
+              </p>
+            </div>
+          </div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"
+          ></div>
+          <div class="md:w-5/12"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Key Pillars Section -->
+    <section class="py-section-padding bg-primary-container/10">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-16">
+          <h2 class="font-headline-lg text-headline-lg text-primary">
+            Key Pillars
+          </h2>
+          <p
+            class="font-headline-md text-headline-md text-secondary font-medium opacity-70"
+          >
+            പ്രധാന പ്രവർത്തനങ്ങൾ
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Educational Activities -->
+          <div
+            class="bg-white p-10 rounded-2xl border-t-4 border-secondary-fixed-dim shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
+            <div class="flex items-start gap-6">
+              <div class="bg-primary-fixed-dim p-4 rounded-xl">
+                <span class="material-symbols-outlined text-primary text-4xl"
+                  >menu_book</span
+                >
+              </div>
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-2">
+                  Educational Activities
+                </h3>
+                <p
+                  class="font-headline-md text-headline-md text-secondary mb-4 font-medium opacity-70"
+                >
+                  വിദ്യാഭ്യാസ പ്രവർത്തനങ്ങൾ
+                </p>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-center gap-3 font-body-md text-on-surface-variant"
+                  >
+                    <span
+                      class="w-2 h-2 bg-secondary-fixed-dim rounded-full"
+                    ></span>
+                    Modern Academic Excellence
+                  </li>
+                  <li
+                    class="flex items-center gap-3 font-body-md text-on-surface-variant"
+                  >
+                    <span
+                      class="w-2 h-2 bg-secondary-fixed-dim rounded-full"
+                    ></span>
+                    Heritage &amp; Linguistic Studies
+                  </li>
+                  <li
+                    class="flex items-center gap-3 font-body-md text-on-surface-variant"
+                  >
+                    <span
+                      class="w-2 h-2 bg-secondary-fixed-dim rounded-full"
+                    ></span>
+                    Research &amp; Publication Hub
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Social Welfare -->
+          <div
+            class="bg-white p-10 rounded-2xl border-t-4 border-secondary shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
+            <div class="flex items-start gap-6">
+              <div class="bg-secondary-fixed p-4 rounded-xl">
+                <span class="material-symbols-outlined text-secondary text-4xl"
+                  >diversity_1</span
+                >
+              </div>
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-2">
+                  Social Welfare
+                </h3>
+                <p
+                  class="font-headline-md text-headline-md text-secondary mb-4 font-medium opacity-70"
+                >
+                  സാമൂഹിക സേവനം
+                </p>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-center gap-3 font-body-md text-on-surface-variant"
+                  >
+                    <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                    Community Healthcare Support
+                  </li>
+                  <li
+                    class="flex items-center gap-3 font-body-md text-on-surface-variant"
+                  >
+                    <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                    Empowerment Programs for Youth
+                  </li>
+                  <li
+                    class="flex items-center gap-3 font-body-md text-on-surface-variant"
+                  >
+                    <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                    Emergency Relief Initiatives
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Professional Team/Classroom Showcase -->
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+      <div class="flex flex-col md:flex-row gap-8 items-stretch h-[600px]">
+        <div class="flex-1 rounded-2xl overflow-hidden relative group">
+          <img
+            alt="Classroom action"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transition-all duration-1000 opacity-100 translate-y-0"
+            data-alt="A focused high-angle photo of professional educators and students in a collaborative meeting. The lighting is bright and airy, with a soft cream-colored background. The atmosphere is one of mutual respect and high-level academic discourse. The colors used in the scene are muted greens and warm beiges, aligning with the heritage brand identity."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8WKXDsDq_3zQBXMATz-hf0m_t1uj3N-ft1xXj_zItOKuEPElT8dzmO57sfxqSnCFAG_pOTEd1pNw3ZNkNA29aQdVT0a3ZlDW3bHuaIDOHvfgpu8KCOW-1WuIUpa_ToatHsS5r2aPt5OJlJocTyyYC4Wdrq6QyMZAAaNas7k3MXODYjbHPuPn3EmbVZnrK3eeCLFNwVhqdKpuq_P6snWIxgw7--h_0ssQb8WoukaVPqgL9tPW5_KFj0m0u4tNYozN-VU1iHSvxN_o"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8"
+          >
+            <div class="text-on-primary">
+              <h4 class="font-headline-md text-headline-md">
+                Integrated Learning
+              </h4>
+              <p class="font-body-md opacity-80">
+                Bridging the gap between tradition and future.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-8">
+          <div class="flex-1 rounded-2xl overflow-hidden relative group">
+            <img
+              alt="Team collaboration"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transition-all duration-1000 opacity-100 translate-y-0"
+              data-alt="A group of smiling, professional men and women from diverse backgrounds standing in a well-lit, modern lobby with subtle Islamic geometric patterns in the background. The lighting is warm and welcoming, capturing a sense of prestigious community leadership. The primary palette includes deep earthy greens and soft whites, reflecting a heritage NGO visual style."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl_1gXc--s2I0_qYOxw65bFt2BfdgpIeFdyEB1jupcllcKWHl76oRn1DeozOa3PUi5Eb9ZK-T1rdaOk6nsN3ExigTari-eqCvJeVEa1xlqiVva2yU1HET9BO89b33-h3iX6YyKOiLLjuu-MLz2ukCjguWifbmmLB3r0L_kVd01_a4V4VFdap5U2tq3aczuffX2ZvnooDbooW7yjGAV73AnzBzzBP0RZXpgKaKVp6PC5eiltat-Wkz5BAq_LWsOkLOPoX5BaT3uqlc"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6"
+            >
+              <div class="text-on-primary">
+                <h4 class="font-headline-md text-headline-md">
+                  Expert Faculty
+                </h4>
+                <p class="font-body-md opacity-80">
+                  Guidance from industry and heritage experts.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1 rounded-2xl overflow-hidden relative group">
+            <img
+              alt="Campus life"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transition-all duration-1000 opacity-100 translate-y-0"
+              data-alt="A wide-angle shot of a bright, modern library with high ceilings and bookshelves that reach the top. Students are sitting at minimalist wooden desks, studying intently. The lighting is a blend of natural skylight and soft interior glow, creating a serene and premium educational atmosphere. The aesthetic is clean and breathable, honoring the institution's heritage mission."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLGIUAR7ibUSUdH9gDRvTZWiWrAmHcJ3DfFJV1tAYCqNpmacT0VHZPQJCNw_zvvm9bjf4qIKK-PyuLdzPIMqRzeEYU-V9C5xieHuygDsBCs6J5q_0QLe_UKBkTxA9iyX0U8W6c7IuckMI4sTqy749KKA8xF26pe7n6qIxINkjrvETci6SeY9Ahst5-4Lap5o7mptm2ZkskjveXwfD6qeo2MBHqxpT7SjZUmmCPoLiOb1KpJuj-1xK2kyePXJPtK4oWCP7N83F4YBE"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6"
+            >
+              <div class="text-on-primary">
+                <h4 class="font-headline-md text-headline-md">
+                  Modern Facilities
+                </h4>
+                <p class="font-body-md opacity-80">
+                  World-class infrastructure for global citizens.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="w-full bg-primary text-on-primary font-body-md text-body-md mt-12 bg-opacity-5 relative"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto relative z-10"
+      >
+        <div>
+          <img
+            alt="AL-HIKMAH Logo"
+            class="h-16 w-auto object-contain mb-4 brightness-0 invert"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQSYlzUy_XIJiJbNBSiVnzcAFX7OinGRhHK2wVoAWGREzEdFpOHr7vLtQ6d6OAC5JMy0_stAms2TjnDItIN5YQexlsHaGT58t2RZhLf3ta9eBQueMy-v3qeIsE-O2lr95ErUQKBfXzp-P2317u1evnvrKZL6PMCboqn87Lj4o35agshFF2BiOIg35A3LLHQDN7DTiGVQ9f97C_4o2788okA9DB9hIlLp17wNTIcX0EXDWIw0w70-B4FbdOMj0w1pCuGUQmp_GEGmA"
+          />
+          <p class="text-on-primary/70 mb-4">
+            Nurturing souls and minds through the wisdom of heritage and the
+            precision of modern science.
+          </p>
+        </div>
+        <div>
+          <h4
+            class="font-headline-md text-headline-md text-secondary-fixed mb-6"
+          >
+            Quick Links
+          </h4>
+          <ul class="space-y-4">
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Terms of Service</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Annual Reports</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Volunteer Portal</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="font-headline-md text-headline-md text-secondary-fixed mb-6"
+          >
+            Contact Us
+          </h4>
+          <p class="text-on-primary/80 mb-2">Calicut, Kerala, India</p>
+          <p class="text-on-primary/80 mb-2">contact@alhikmah.org</p>
+          <p class="text-on-primary/80">+91 495 2345 678</p>
+        </div>
+        <div>
+          <h4
+            class="font-headline-md text-headline-md text-secondary-fixed mb-6"
+          >
+            Follow Us
+          </h4>
+          <div class="flex gap-4">
+            <div
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all"
+            >
+              <span class="material-symbols-outlined">public</span>
+            </div>
+            <div
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all"
+            >
+              <span class="material-symbols-outlined">alternate_email</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-container-max mx-auto px-gutter py-6 border-t border-white/10 flex justify-center text-on-primary/60"
+      >
+        <p class="">© 2024 Al-Hikmah Foundation. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      // Simple scroll effect for Navbar
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 20) {
+          nav.classList.add("py-2", "shadow-md");
+          nav.classList.remove("py-4", "shadow-sm");
+        } else {
+          nav.classList.remove("py-2", "shadow-md");
+          nav.classList.add("py-4", "shadow-sm");
         }
-    </script>
-</head>
-<body class="bg-background text-on-surface font-body-md pattern-bg selection:bg-secondary-fixed-dim selection:text-on-secondary-fixed">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out">
-<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
-<img alt="AL-HIKMAH Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQSYlzUy_XIJiJbNBSiVnzcAFX7OinGRhHK2wVoAWGREzEdFpOHr7vLtQ6d6OAC5JMy0_stAms2TjnDItIN5YQexlsHaGT58t2RZhLf3ta9eBQueMy-v3qeIsE-O2lr95ErUQKBfXzp-P2317u1evnvrKZL6PMCboqn87Lj4o35agshFF2BiOIg35A3LLHQDN7DTiGVQ9f97C_4o2788okA9DB9hIlLp17wNTIcX0EXDWIw0w70-B4FbdOMj0w1pCuGUQmp_GEGmA"/>
-<div class="hidden md:flex items-center gap-8">
-<a class="font-body-md text-body-md text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Home</a>
-<a class="font-body-md text-body-md text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1" href="#">Programs</a>
-<a class="font-body-md text-body-md text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Events</a>
-<a class="font-body-md text-body-md text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Donations</a>
-<a class="font-body-md text-body-md text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Contact</a>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all">Donate Now</button>
-</div>
-</nav>
-<!-- Hero Section -->
-<header class="pt-32 pb-16 px-gutter max-w-container-max mx-auto text-center">
-<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-4 uppercase tracking-widest">Knowledge • Virtue • Service</span>
-<h1 class="font-display-lg text-display-lg md:text-display-lg text-primary mb-2">About Our Foundation</h1>
-<p class="font-headline-md text-headline-md text-secondary font-medium opacity-80">ഞങ്ങളെക്കുറിച്ച് (About Us)</p>
-</header>
-<!-- Mission & Vision Bento Grid -->
-<section class="py-12 px-gutter max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-<div class="md:col-span-7 glass-card rounded-xl p-10 flex flex-col justify-center relative overflow-hidden group transition-all duration-1000 opacity-100 translate-y-0">
-<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary-fixed-dim/20 rounded-full blur-3xl group-hover:bg-secondary-fixed-dim/30 transition-colors"></div>
-<div class="relative z-10">
-<span class="material-symbols-outlined text-primary text-5xl mb-6">visibility</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Our Vision</h2>
-<p class="font-headline-md text-headline-md text-secondary mb-6 font-medium opacity-70">ഞങ്ങളുടെ ദർശനം</p>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">To be a leading center of excellence in modern education rooted in spiritual values, fostering a generation that excels professionally while remaining anchored in ethical heritage.</p>
-</div>
-</div>
-<div class="md:col-span-5 relative h-80 md:h-auto rounded-xl overflow-hidden shadow-xl">
-<img alt="Vision image" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105 transition-all duration-1000 opacity-100 translate-y-0" data-alt="A serene landscape featuring a modern architectural building with traditional Islamic design elements like arches and geometric windows. The scene is bathed in golden hour sunlight, creating long soft shadows and a warm glow. The atmosphere is peaceful and scholarly, reflecting a high-end educational institution's campus. Soft green vegetation frames the view, maintaining an organic and heritage-rich aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwXPi87x1pGF_9alwkPKe9zpOMl4_MLWBEBh7XBXs6AwcRtW6S-trlHoE1HSmEnA8g1quJurMLleiD05WNRiAFm9dv7o76WFhzVm_QEUB7t9qlZyC_eDXjmxrxnJHP6BdEuwYjgXVmR2lMkgy09SKIHtXrn4vimyDzm2QYEfC7NStaTlq8C1iJoBgpqTv3-3taLDPAYBl43EaraMvuxApeiYv5J-DcD3TQgLQ3vlMPjo7MjFTHjGpowTYfxTJI-1cbqMDffaIUBcQ"/>
-</div>
-<div class="md:col-span-5 relative h-80 md:h-auto rounded-xl overflow-hidden shadow-xl order-last md:order-none">
-<img alt="Mission image" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105 transition-all duration-1000 opacity-100 translate-y-0" data-alt="An overhead shot of a modern, bright classroom where diverse students are collaborating around a circular table. The room is filled with natural light, highlighting soft beige walls and sleek wooden furniture. The atmosphere is professional yet warm and accessible. The visual style is crisp and high-key, emphasizing a clean, contemporary learning environment focused on collective progress." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJGcS68g0gkP27pc6D0_NBCtghMuGfy762JqTObHQenpga56PWSqwb4fVCnepdwtFalurZ_ZMioAv3TFzK26cas_lLtxVyQDFX6basSSKPxrifwj8xH3JlI6JcfqISyd4w6L5ulAaCgnJJtiX5kdhYjebYg4FydbZh5DhEU-nPryjahLPio8VwmLitDwUx-IWKG5QGUFd8jhEkDJDLyveomFC4ZrP9IvNkZFr_8OrZbAiRarVZJ3cYlOH9S9nBRTzpkzWsf42J-gw"/>
-</div>
-<div class="md:col-span-7 bg-primary rounded-xl p-10 flex flex-col justify-center relative overflow-hidden text-on-primary">
-<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
-<div class="relative z-10">
-<span class="material-symbols-outlined text-secondary-fixed-dim text-5xl mb-6">rocket_launch</span>
-<h2 class="font-headline-lg text-headline-lg mb-2">Our Mission</h2>
-<p class="font-headline-md text-headline-md text-primary-fixed mb-6 font-medium opacity-80">ഞങ്ങളുടെ ദൗത്യം</p>
-<p class="font-body-lg text-body-lg text-primary-fixed max-w-xl">Empowering the community through holistic educational programs, compassionate social welfare initiatives, and the preservation of cultural heritage for a sustainable and harmonious future.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Our Story Timeline -->
-<section class="py-section-padding px-gutter max-w-container-max mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-primary">Our Story</h2>
-<p class="font-headline-md text-headline-md text-secondary font-medium opacity-70">ഞങ്ങളുടെ ചരിത്രം</p>
-</div>
-<div class="relative">
-<!-- Vertical Line -->
-<div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 timeline-line"></div>
-<!-- Timeline Item 1 -->
-<div class="relative mb-16 md:mb-24 flex flex-col md:flex-row items-center justify-between">
-<div class="md:w-5/12 text-center md:text-right mb-8 md:mb-0">
-<div class="glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-1000 opacity-100 translate-y-0">
-<span class="font-display-lg text-display-lg text-secondary-fixed-dim block mb-2">2010</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">The Humble Beginning</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Founded by a group of visionaries in a small rented space with 15 students, aiming to bridge the gap between spiritual and academic knowledge.</p>
-</div>
-</div>
-<div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-<div class="md:w-5/12"></div>
-</div>
-<!-- Timeline Item 2 -->
-<div class="relative mb-16 md:mb-24 flex flex-col md:flex-row items-center justify-between">
-<div class="md:w-5/12 order-last md:order-none"></div>
-<div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-<div class="md:w-5/12 text-center md:text-left mb-8 md:mb-0">
-<div class="glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-1000 opacity-100 translate-y-0">
-<span class="font-display-lg text-display-lg text-secondary-fixed-dim block mb-2">2015</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Expansion Phase</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Inauguration of our primary campus. Introduction of the "Scholar-Professional" track, integrating specialized career coaching with ethics.</p>
-</div>
-</div>
-</div>
-<!-- Timeline Item 3 -->
-<div class="relative flex flex-col md:flex-row items-center justify-between">
-<div class="md:w-5/12 text-center md:text-right mb-8 md:mb-0">
-<div class="glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-1000 opacity-100 translate-y-0">
-<span class="font-display-lg text-display-lg text-secondary-fixed-dim block mb-2">2023</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Digital Innovation</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Launching the global Al-Hikmah online portal, reaching thousands of learners across three continents with heritage courses.</p>
-</div>
-</div>
-<div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-<div class="md:w-5/12"></div>
-</div>
-</div>
-</section>
-<!-- Key Pillars Section -->
-<section class="py-section-padding bg-primary-container/10">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-primary">Key Pillars</h2>
-<p class="font-headline-md text-headline-md text-secondary font-medium opacity-70">പ്രധാന പ്രവർത്തനങ്ങൾ</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<!-- Educational Activities -->
-<div class="bg-white p-10 rounded-2xl border-t-4 border-secondary-fixed-dim shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-6">
-<div class="bg-primary-fixed-dim p-4 rounded-xl">
-<span class="material-symbols-outlined text-primary text-4xl">menu_book</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Educational Activities</h3>
-<p class="font-headline-md text-headline-md text-secondary mb-4 font-medium opacity-70">വിദ്യാഭ്യാസ പ്രവർത്തനങ്ങൾ</p>
-<ul class="space-y-3">
-<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
-<span class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></span> Modern Academic Excellence
-                                </li>
-<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
-<span class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></span> Heritage &amp; Linguistic Studies
-                                </li>
-<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
-<span class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></span> Research &amp; Publication Hub
-                                </li>
-</ul>
-</div>
-</div>
-</div>
-<!-- Social Welfare -->
-<div class="bg-white p-10 rounded-2xl border-t-4 border-secondary shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-6">
-<div class="bg-secondary-fixed p-4 rounded-xl">
-<span class="material-symbols-outlined text-secondary text-4xl">diversity_1</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Social Welfare</h3>
-<p class="font-headline-md text-headline-md text-secondary mb-4 font-medium opacity-70">സാമൂഹിക സേവനം</p>
-<ul class="space-y-3">
-<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
-<span class="w-2 h-2 bg-secondary rounded-full"></span> Community Healthcare Support
-                                </li>
-<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
-<span class="w-2 h-2 bg-secondary rounded-full"></span> Empowerment Programs for Youth
-                                </li>
-<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
-<span class="w-2 h-2 bg-secondary rounded-full"></span> Emergency Relief Initiatives
-                                </li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Professional Team/Classroom Showcase -->
-<section class="py-section-padding px-gutter max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row gap-8 items-stretch h-[600px]">
-<div class="flex-1 rounded-2xl overflow-hidden relative group">
-<img alt="Classroom action" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transition-all duration-1000 opacity-100 translate-y-0" data-alt="A focused high-angle photo of professional educators and students in a collaborative meeting. The lighting is bright and airy, with a soft cream-colored background. The atmosphere is one of mutual respect and high-level academic discourse. The colors used in the scene are muted greens and warm beiges, aligning with the heritage brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8WKXDsDq_3zQBXMATz-hf0m_t1uj3N-ft1xXj_zItOKuEPElT8dzmO57sfxqSnCFAG_pOTEd1pNw3ZNkNA29aQdVT0a3ZlDW3bHuaIDOHvfgpu8KCOW-1WuIUpa_ToatHsS5r2aPt5OJlJocTyyYC4Wdrq6QyMZAAaNas7k3MXODYjbHPuPn3EmbVZnrK3eeCLFNwVhqdKpuq_P6snWIxgw7--h_0ssQb8WoukaVPqgL9tPW5_KFj0m0u4tNYozN-VU1iHSvxN_o"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
-<div class="text-on-primary">
-<h4 class="font-headline-md text-headline-md">Integrated Learning</h4>
-<p class="font-body-md opacity-80">Bridging the gap between tradition and future.</p>
-</div>
-</div>
-</div>
-<div class="flex-1 flex flex-col gap-8">
-<div class="flex-1 rounded-2xl overflow-hidden relative group">
-<img alt="Team collaboration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transition-all duration-1000 opacity-100 translate-y-0" data-alt="A group of smiling, professional men and women from diverse backgrounds standing in a well-lit, modern lobby with subtle Islamic geometric patterns in the background. The lighting is warm and welcoming, capturing a sense of prestigious community leadership. The primary palette includes deep earthy greens and soft whites, reflecting a heritage NGO visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl_1gXc--s2I0_qYOxw65bFt2BfdgpIeFdyEB1jupcllcKWHl76oRn1DeozOa3PUi5Eb9ZK-T1rdaOk6nsN3ExigTari-eqCvJeVEa1xlqiVva2yU1HET9BO89b33-h3iX6YyKOiLLjuu-MLz2ukCjguWifbmmLB3r0L_kVd01_a4V4VFdap5U2tq3aczuffX2ZvnooDbooW7yjGAV73AnzBzzBP0RZXpgKaKVp6PC5eiltat-Wkz5BAq_LWsOkLOPoX5BaT3uqlc"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
-<div class="text-on-primary">
-<h4 class="font-headline-md text-headline-md">Expert Faculty</h4>
-<p class="font-body-md opacity-80">Guidance from industry and heritage experts.</p>
-</div>
-</div>
-</div>
-<div class="flex-1 rounded-2xl overflow-hidden relative group">
-<img alt="Campus life" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transition-all duration-1000 opacity-100 translate-y-0" data-alt="A wide-angle shot of a bright, modern library with high ceilings and bookshelves that reach the top. Students are sitting at minimalist wooden desks, studying intently. The lighting is a blend of natural skylight and soft interior glow, creating a serene and premium educational atmosphere. The aesthetic is clean and breathable, honoring the institution's heritage mission." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLGIUAR7ibUSUdH9gDRvTZWiWrAmHcJ3DfFJV1tAYCqNpmacT0VHZPQJCNw_zvvm9bjf4qIKK-PyuLdzPIMqRzeEYU-V9C5xieHuygDsBCs6J5q_0QLe_UKBkTxA9iyX0U8W6c7IuckMI4sTqy749KKA8xF26pe7n6qIxINkjrvETci6SeY9Ahst5-4Lap5o7mptm2ZkskjveXwfD6qeo2MBHqxpT7SjZUmmCPoLiOb1KpJuj-1xK2kyePXJPtK4oWCP7N83F4YBE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
-<div class="text-on-primary">
-<h4 class="font-headline-md text-headline-md">Modern Facilities</h4>
-<p class="font-body-md opacity-80">World-class infrastructure for global citizens.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="w-full bg-primary text-on-primary font-body-md text-body-md mt-12 bg-opacity-5 relative">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto relative z-10">
-<div>
-<img alt="AL-HIKMAH Logo" class="h-16 w-auto object-contain mb-4 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQSYlzUy_XIJiJbNBSiVnzcAFX7OinGRhHK2wVoAWGREzEdFpOHr7vLtQ6d6OAC5JMy0_stAms2TjnDItIN5YQexlsHaGT58t2RZhLf3ta9eBQueMy-v3qeIsE-O2lr95ErUQKBfXzp-P2317u1evnvrKZL6PMCboqn87Lj4o35agshFF2BiOIg35A3LLHQDN7DTiGVQ9f97C_4o2788okA9DB9hIlLp17wNTIcX0EXDWIw0w70-B4FbdOMj0w1pCuGUQmp_GEGmA"/>
-<p class="text-on-primary/70 mb-4">Nurturing souls and minds through the wisdom of heritage and the precision of modern science.</p>
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-secondary-fixed mb-6">Quick Links</h4>
-<ul class="space-y-4">
-<li class=""><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a></li>
-<li class=""><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a></li>
-<li class=""><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Annual Reports</a></li>
-<li class=""><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Volunteer Portal</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-secondary-fixed mb-6">Contact Us</h4>
-<p class="text-on-primary/80 mb-2">Calicut, Kerala, India</p>
-<p class="text-on-primary/80 mb-2">contact@alhikmah.org</p>
-<p class="text-on-primary/80">+91 495 2345 678</p>
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-secondary-fixed mb-6">Follow Us</h4>
-<div class="flex gap-4">
-<div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all">
-<span class="material-symbols-outlined">public</span>
-</div>
-<div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all">
-<span class="material-symbols-outlined">alternate_email</span>
-</div>
-</div>
-</div>
-</div>
-<div class="max-w-container-max mx-auto px-gutter py-6 border-t border-white/10 flex justify-center text-on-primary/60">
-<p class="">© 2024 Al-Hikmah Foundation. All rights reserved.</p>
-</div>
-</footer>
-<script>
-        // Simple scroll effect for Navbar
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 20) {
-                nav.classList.add('py-2', 'shadow-md');
-                nav.classList.remove('py-4', 'shadow-sm');
-            } else {
-                nav.classList.remove('py-2', 'shadow-md');
-                nav.classList.add('py-4', 'shadow-sm');
-            }
+      });
+
+      // Intersection Observer for animation triggers
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
         });
+      }, observerOptions);
 
-        // Intersection Observer for animation triggers
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.glass-card, img').forEach(el => {
-            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-            observer.observe(el);
-        });
+      document.querySelectorAll(".glass-card, img").forEach((el) => {
+        el.classList.add(
+          "transition-all",
+          "duration-1000",
+          "opacity-0",
+          "translate-y-10",
+        );
+        observer.observe(el);
+      });
     </script>
-</body></html>
+  </body>
+</html>
