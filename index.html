@@ -1,0 +1,898 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      AL-HIKMAH Foundation - Empowering Minds, Enriching Communities
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-panel {
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes bounce-slow {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 2s infinite;
+      }
+      .pattern-overlay {
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(115, 120, 115, 0.05) 1px,
+          transparent 0
+        );
+        background-size: 32px 32px;
+      }
+      .masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 200px;
+        gap: 24px;
+      }
+      .masonry-item-tall {
+        grid-row: span 2;
+      }
+      .masonry-item-wide {
+        grid-column: span 2;
+      }
+      @media (max-width: 768px) {
+        .masonry-item-wide {
+          grid-column: span 1;
+        }
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#e9c176",
+              error: "#ba1a1a",
+              "inverse-surface": "#30312f",
+              background: "#fbf9f7",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#adc4b4",
+              "on-secondary-fixed-variant": "#5d4201",
+              "outline-variant": "#c2c8c2",
+              "on-surface": "#1b1c1b",
+              "surface-variant": "#e3e2e0",
+              "surface-bright": "#fbf9f7",
+              tertiary: "#4b3031",
+              "surface-container-highest": "#e3e2e0",
+              "tertiary-fixed-dim": "#e5bdbd",
+              "surface-container-high": "#e9e8e5",
+              "inverse-primary": "#b5ccbb",
+              "on-secondary-fixed": "#261900",
+              "primary-fixed": "#d0e8d7",
+              "on-surface-variant": "#424844",
+              "surface-tint": "#4e6356",
+              "inverse-on-surface": "#f2f0ee",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#3d5245",
+              surface: "#fbf9f7",
+              "on-tertiary-fixed": "#2c1516",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dbdad7",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#deb5b6",
+              "primary-fixed-dim": "#b5ccbb",
+              "on-background": "#1b1c1b",
+              "on-secondary-container": "#785a1a",
+              "on-error": "#ffffff",
+              "surface-container": "#efeeeb",
+              secondary: "#775a19",
+              "error-container": "#ffdad6",
+              primary: "#273b2f",
+              "on-primary-fixed": "#0b1f15",
+              "tertiary-container": "#644647",
+              "secondary-container": "#fed488",
+              "secondary-fixed": "#ffdea5",
+              "tertiary-fixed": "#ffdada",
+              "surface-container-low": "#f5f3f1",
+              "on-primary-fixed-variant": "#374b3f",
+              outline: "#737873",
+              "on-tertiary-fixed-variant": "#5c3f40",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "section-padding": "80px",
+              unit: "8px",
+              "margin-mobile": "20px",
+              "container-max": "1280px",
+            },
+            fontFamily: {
+              "body-lg": ["Manrope"],
+              "body-md": ["Manrope"],
+              "headline-lg": ["Manrope"],
+              "headline-md": ["Manrope"],
+              "display-lg": ["Manrope"],
+              "label-md": ["Manrope"],
+              "display-lg-mobile": ["Manrope"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+              "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-lg-mobile": [
+                "36px",
+                { lineHeight: "1.2", fontWeight: "800" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden"
+  >
+    <!-- Top Navigation Bar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-variant/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out"
+    >
+      <div
+        class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto"
+      >
+        <div
+          class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight"
+        >
+          <img
+            alt="AL-HIKMAH Logo"
+            class="h-12 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"
+          />
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+          <a
+            class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-body-md text-body-md"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="about.html"
+            >About Us</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="team_initiatives.html"
+            >Team & Initiatives</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="gallery.html"
+            >Gallery</a
+          >
+          <a
+            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+            href="contact.html"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform"
+        >
+          Donate Now
+        </button>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header
+      class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          class="w-full h-full object-cover"
+          data-alt="A grand, architectural campus of an educational institution at twilight. The building features elegant arches and modern stone work, illuminated by warm amber lights against a deep navy sky. The environment is serene and prestigious, conveying a sense of academic excellence and heritage through a cinematic, high-contrast visual style with soft shadows."
+          src="assets/images/banner.jpeg"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"
+        ></div>
+      </div>
+      <div class="relative z-10 px-gutter w-full max-w-container-max">
+        <div
+          class="max-w-3xl glass-panel bg-black/40 p-8 md:p-12 rounded-3xl reveal active"
+        >
+          <div
+            class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/30"
+          >
+            <span
+              class="material-symbols-outlined text-secondary-fixed-dim text-sm"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >auto_awesome</span
+            >
+            <span
+              class="text-secondary-fixed-dim font-label-md text-label-md uppercase tracking-widest"
+              >Heritage of Wisdom</span
+            >
+          </div>
+          <h1
+            class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight"
+          >
+            Empowering Minds, <br />Enriching Communities.
+          </h1>
+          <p class="font-body-lg text-body-lg text-white/90 mb-8 max-w-xl">
+            മനസ്സുകളെ ശാക്തീകരിക്കുന്നു, സമൂഹങ്ങളെ പരിപോഷിപ്പിക്കുന്നു.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-secondary-fixed-dim transition-all shadow-lg"
+            >
+              Donate Now
+            </button>
+            <button
+              class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all"
+            >
+              Become Volunteer
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Animated Scroll Indicator -->
+      <div
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60"
+      >
+        <span class="font-label-md text-[10px] uppercase tracking-widest"
+          >Scroll to explore</span
+        >
+        <div
+          class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1"
+        >
+          <div class="w-1 h-2 bg-white rounded-full animate-bounce-slow"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Statistics Section -->
+    <section
+      class="py-section-padding pattern-overlay bg-surface-container-low relative overflow-hidden"
+    >
+      <div
+        class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-12 text-center relative z-10"
+      >
+        <div class="reveal">
+          <div
+            class="text-primary font-display-lg text-display-lg mb-2"
+            data-target="1500"
+          >
+            8+
+          </div>
+          <div
+            class="font-label-md text-label-md text-outline uppercase tracking-widest"
+          >
+            Students Educated
+          </div>
+          <p class="mt-4 text-on-surface-variant font-body-md">
+            Empowering the next generation with values and knowledge.
+          </p>
+        </div>
+        <div class="reveal">
+          <div
+            class="text-secondary font-display-lg text-display-lg mb-2"
+            data-target="200"
+          >
+            0+
+          </div>
+          <div
+            class="font-label-md text-label-md text-outline uppercase tracking-widest"
+          >
+            Active Volunteers
+          </div>
+          <p class="mt-4 text-on-surface-variant font-body-md">
+            Selfless hearts working towards a better tomorrow.
+          </p>
+        </div>
+        <div class="reveal">
+          <div
+            class="text-primary font-display-lg text-display-lg mb-2"
+            data-target="50000"
+          >
+            250+
+          </div>
+          <div
+            class="font-label-md text-label-md text-outline uppercase tracking-widest"
+          >
+            Beneficiaries
+          </div>
+          <p class="mt-4 text-on-surface-variant font-body-md">
+            Impact reaching families across the entire region.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Programs -->
+    <section
+      class="py-section-padding bg-background border-b border-outline-variant/30"
+    >
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-16 reveal"
+        >
+          <div class="max-w-2xl">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+              Our Core Initiatives
+            </h2>
+            <p class="text-on-surface-variant text-body-lg">
+              Strategic programs designed to tackle fundamental challenges in
+              our community through long-term sustainable solutions.
+            </p>
+          </div>
+          <a
+            class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:gap-4 transition-all mt-6 md:mt-0"
+            href="#"
+          >
+            VIEW ALL PROGRAMS
+            <span class="material-symbols-outlined">trending_flat</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Program Card 1 -->
+          <div class="group relative overflow-hidden rounded-[24px] reveal">
+            <img
+              class="w-full h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Education support classroom"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyRWJkzNTmn9707AWej-hMuVTfkBrEGsbBRaDgtJYf8UdDOdRb-JhmaOWKV4iJUMVneyAqogQ5cx0DhHDYnfd-lzTwUz2QbItEGc3_B1Qvbe2gIuOz63himOKzS6jfXUY48uI5fJ3Drowj7XHSyeZEeDk1-rfRGZMjm9zsZSbA4MIgSZqXnD6t9XT6gjFQV3gve--92jwE9fZL96JvuVdQNnYkKBp4Ekx8E3qUvqF8yIQpGn8rY2co7Oo7o86eKTcReNmdV_LzDZ8"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 p-8 w-full">
+              <div class="glass-panel p-6 rounded-2xl bg-white/10">
+                <h3 class="font-headline-md text-headline-md text-white mb-2">
+                  Education Support
+                </h3>
+                <p class="text-white/80 font-body-md mb-6">
+                  Providing scholarships, learning materials, and modern
+                  infrastructure for deserving students.
+                </p>
+                <button
+                  class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-label-md text-label-md flex items-center gap-2 group-hover:bg-secondary-fixed-dim transition-colors"
+                >
+                  Learn More
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Program Card 2 -->
+          <div class="group relative overflow-hidden rounded-[24px] reveal">
+            <img
+              class="w-full h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Orphan care volunteer support"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWMyFodrCsW7lQVAzXJeaFd4frXUUWsJUjFUfpWAk-x3uFbGoG573XnxIMB_6d_qgfYgKJQVc30ATMLFgqChnak_NJ1mdiO4qM4VcAV8u5pJTsQnEJHseid0ZKcowqJu54rLXAgJttrUKnZF-8B720iNJLZ_7e_wGhcQDzv4H54vH92GE0IaWsnZ4y0CyGzQMdAgIo5F5IiZhQlSLMtwjyhmBNXAfF-yOaty360NcvV3NFkhLOkadh5x-D59mDsH45NQhDXsgJ-ok"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 p-8 w-full">
+              <div class="glass-panel p-6 rounded-2xl bg-white/10">
+                <h3 class="font-headline-md text-headline-md text-white mb-2">
+                  Orphan Care
+                </h3>
+                <p class="text-white/80 font-body-md mb-6">
+                  A holistic ecosystem ensuring emotional, physical, and
+                  educational growth for every child in our care.
+                </p>
+                <button
+                  class="bg-white text-primary px-6 py-2 rounded-full font-label-md text-label-md flex items-center gap-2 hover:bg-surface-variant transition-colors"
+                >
+                  Support a Child
+                  <span class="material-symbols-outlined text-sm"
+                    >favorite</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="py-section-padding bg-surface-container-lowest">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-16 reveal">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+            Capturing Our Impact
+          </h2>
+          <p class="text-on-surface-variant text-body-lg max-w-2xl mx-auto">
+            Moments of hope, service, and community growth captured through our
+            journey.
+          </p>
+        </div>
+        <div class="masonry-grid reveal">
+          <div
+            class="masonry-item-tall group relative overflow-hidden rounded-2xl">
+            <img
+              alt="Gallery image"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJg0qw8FnejULJp1kXg83Jk4q7MjiC5Urqc9sU9QgHRUUie1CR_r3eqKLvCGx3MIdjZObW3XCzdGUZJ5yTkt-V1HpkKDVjdZWc-N6PiZ__KeL8EFN_j7BmI6ZIjmDK5bfisVbyEXfk8EE9PCMiLoMYcTo7sweYsC_90w7HSNCQr_VQNV9XkyQBas027e3dehloKmakyGEe0NZqmj3Zz4hdCgQvgXfsIZaJLclVNjXB_ujQfqkcsdyia2n1CtRd_3Quc82M0mqbISU"
+            />
+            <div
+              class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl">
+            <img
+              alt="Gallery image"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBernIQM3wGQ2aqMdMP4dYUy_JCyhlk-KAfuOHGpoeQaqEUyStmSZn1zZPIMmqjf1ean0YwIiqAqoPiaTxwbwbUUvM7BrI-NAC_7oBGDqunz2yezrPR4Oplzqll4TQ0wrbmIthFRFzA6YARnIu-vhb-tahLBPgbVvkuaQfA9fRi67E6UTnNHAklzmUj4vzDsFgasH8lk50W5vl3M_Ufs351hDhySJwXkHKOIGXa9uhxI_VonsrE7ZZdYyVNvFhh05RRu3byi0WnFmk"
+            />
+            <div
+              class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl">
+            <img
+              alt="Gallery image"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzIv3IrPywV4og8M-XqfhmpmiJjYDXbZ_3YEQuFxShvo2_fvrVegglXESvtz1UKarSB9hDGElaYQc_XD-czzIoFJDqm7xosMvD6DMFna1rv3jEhVcJXXCuCjbwyojYUX5fX12ALrQT5s351hDFf4l-esEvTduggMiyo5fORzWQBz04wKZgT3MQ4TtrxvCuZLOoUNzaPay-0Xxx5Mn6rfMMX7BoVYifBD3NbXKSGj11G15cZgOaHmsTzvtEv_JUS0nZZYDx8_5kuG8"
+            />
+            <div
+              class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+          </div>
+          <div
+            class="masonry-item-wide group relative overflow-hidden rounded-2xl"
+          >
+            <img
+              alt="Gallery image"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc1WsuDZ28bwuee-lvhAarUghlT25Dij-sBcSfGOVuQJC-pWO_1Nd28OvA6OXCFBHjslXu_QmlSzE7_Jyz-wwVhbVCYlAHl0JJv9m4alH4tGNdRUKw9loKK0iC26VwhkDTrkcUrEPneVzR0PVFmqkdH2K9armUXGtGEeEPT5ADGkvPqKGUHtH1rRRGAyqRmpOcX8rcgSsCX0hqf46dWscAQwRMZ0S1qrDOu2aPSoPoRwulmVO5TrXeyiaFFnovGdHD4SHY9qpdekA"
+            />
+            <div
+              class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+          </div>
+        </div>
+        <div class="mt-12 text-center reveal">
+          <a
+            href="gallery.html"
+            class="border-2 border-primary text-primary px-10 py-3 rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all"
+          >
+            View All Gallery
+        </a>
+        </div>
+      </div>
+    </section>
+    <!-- Leadership Section -->
+    <section
+      class="py-section-padding bg-surface-container-low pattern-overlay"
+    >
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-16 reveal">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+            Our Leadership
+          </h2>
+          <p class="text-on-surface-variant text-body-lg max-w-2xl mx-auto">
+            Guided by the vision of our main committee members dedicated to
+            community empowerment.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 reveal">
+          <!-- Member 1 -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
+            >
+              <img
+                alt="Committee Member"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXNNLmvVbe2TJd0KbhVmcqoytiDXZe3jJgkMbD7xxmqUeKhxma96jFuNmGceXLGAl26PqGK8hfdRb7pApCzBtBc5cOWn5Xaox8UJ5u2UqIsJ3Xg_jEOlgk9qleNcGVZ7Kr-GASTQyBKO5Tw-SCC8ylXU96nu7tPsxeOBIFd83Xuh9QnNlUpX0RNqq12qzpwEGAMTnZ8CzaHBQ0kjGZNYa4INY_AWt56iddmkmpbaAOBJLZIXGMZC6RhpAogZgBVfr11uez0B6xw4"
+              />
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">
+              Ahmed Khan
+            </h4>
+            <p
+              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+            >
+              Chairman
+            </p>
+          </div>
+          <!-- Member 2 -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
+            >
+              <img
+                alt="Committee Member"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS_afvJMBS2Dq8isTsZ137aJPRk2itST9J4rtai7WZ4Vycuu1-x6L4gJVTDhyd360ZXC_tOILu7WB9Vd00cdba4Yb_QRcEZOVW1ej2RLXDJDZJkGFNsrds7iG9fc6l5n5qv710SLV1gIU5A80BX84q1WjZUlQbPzseXqy3Qnqd9kEMBVtRaxQeQEbjrolCLeUUHkZo8iRCsy1s7Zch3A3km0uEMoKZzetrQOQwqBZFLsu4Lg6aR-rH9IgigZF2lGKtirYyh8L1ZlE"
+              />
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">
+              Dr. Ibrahim Ali
+            </h4>
+            <p
+              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+            >
+              General Secretary
+            </p>
+          </div>
+          <!-- Member 3 -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
+            >
+              <img
+                alt="Committee Member"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYAmQs0wlDT8g0QMVRFhpuDWGlx5CbaH889SaI1hddTEqQHmSWcQ1C-UidQ6pZKHnwsVjNkhNJQXzAh149xhZl3vItqgOuKeaEwOSuPrjCTTA7sfEOuG4U0CXUW3JP-be0MnoqgCOjK_DIdU4TVEfglkf_vOsICit3f_Wfd2RO00Dj141L-1AbNANYLv75rPFP6S6s4d4TdkJSUniJ6mRNDK6BORbcShDlj2rBBQB4AXoNKdxugRvPjgBuqI-LJ-BMZ6QFyr60xZc"
+              />
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">
+              Mohammed Faisal
+            </h4>
+            <p
+              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+            >
+              Treasurer
+            </p>
+          </div>
+          <!-- Member 4 -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
+            >
+              <img
+                alt="Committee Member"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgaVbUrYICNzTe_Vn7vJZdLGQQZuQcmMmcX0zH6NiCSf9q87L4DIHNpEIsTsO2S_YI5wZt7Au_xkCkwUH6t8HTZttbRtQ4SyDdT6UAodPt0SDoEoL5BpyprhCj0qV1fxdxe2yTqymy2M0HLuD1x6LaTR5g1HAlau1tLK4uOf0t8qi7KHkahIKf-EEvpdZVScO0VcDpaE7crqiG2hXax-fE3W15enAxkYJ1UZWDHYxwoDc7K7zWBWrIiQOFahmKpX3AC4foANFVJGw"
+              />
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">
+              Yusuf Shah
+            </h4>
+            <p
+              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+            >
+              Executive Member
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Upcoming Events Timeline -->
+    <section class="py-section-padding bg-background pattern-overlay">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <h2
+          class="font-headline-lg text-headline-lg text-primary text-center mb-16 reveal"
+        >
+          Community Calendar
+        </h2>
+        <div class="space-y-8 max-w-4xl mx-auto">
+          <!-- Event 1 -->
+          <div
+            class="flex flex-col md:flex-row gap-6 items-start md:items-center bg-surface p-6 rounded-2xl shadow-sm reveal border border-outline-variant hover:border-secondary transition-all"
+          >
+            <div
+              class="bg-primary text-on-primary p-4 rounded-xl text-center min-w-[100px]"
+            >
+              <div class="font-display-lg text-2xl leading-none">12</div>
+              <div class="font-label-md text-[10px] uppercase">OCT 2024</div>
+            </div>
+            <div class="flex-1">
+              <div
+                class="flex items-center gap-2 text-secondary font-label-md text-xs mb-1 uppercase tracking-wider"
+              >
+                <span class="material-symbols-outlined text-sm">school</span>
+                Workshop
+              </div>
+              <h4 class="font-headline-md text-headline-md text-on-surface">
+                Digital Literacy Seminar
+              </h4>
+              <p class="text-on-surface-variant font-body-md">
+                Empowering local youth with modern technological tools and
+                skills.
+              </p>
+            </div>
+            <button
+              class="text-primary font-bold hover:translate-x-1 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >chevron_right</span
+              >
+            </button>
+          </div>
+          <!-- Event 2 -->
+          <div
+            class="flex flex-col md:flex-row gap-6 items-start md:items-center bg-surface p-6 rounded-2xl shadow-sm reveal border border-outline-variant hover:border-secondary transition-all"
+          >
+            <div
+              class="bg-secondary text-on-secondary p-4 rounded-xl text-center min-w-[100px]"
+            >
+              <div class="font-display-lg text-2xl leading-none">24</div>
+              <div class="font-label-md text-[10px] uppercase">OCT 2024</div>
+            </div>
+            <div class="flex-1">
+              <div
+                class="flex items-center gap-2 text-secondary font-label-md text-xs mb-1 uppercase tracking-wider"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >volunteer_activism</span
+                >
+                Community
+              </div>
+              <h4 class="font-headline-md text-headline-md text-on-surface">
+                Annual Volunteer Meet
+              </h4>
+              <p class="text-on-surface-variant font-body-md">
+                Celebrating the spirit of service with our dedicated volunteer
+                network.
+              </p>
+            </div>
+            <button
+              class="text-primary font-bold hover:translate-x-1 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >chevron_right</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-primary dark:bg-on-primary-fixed text-on-primary dark:text-primary-fixed"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto relative overflow-hidden"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <div class="font-headline-md text-headline-md text-on-primary mb-6">
+            <img
+              alt="AL-HIKMAH Logo"
+              class="h-16 w-auto object-contain brightness-0 invert"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"
+            />
+          </div>
+          <p class="text-on-primary/70 font-body-md mb-8">
+            Guided by wisdom, serving with compassion. Dedicated to holistic
+            community development through education and care.
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-sm">public</span>
+            </a>
+            <a
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-sm">chat</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-span-1">
+          <h5
+            class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed mb-6"
+          >
+            Navigation
+          </h5>
+          <ul class="space-y-4 font-body-md">
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Our History</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Core Programs</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Donate</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-1">
+          <h5
+            class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed mb-6"
+          >
+            Resources
+          </h5>
+          <ul class="space-y-4 font-body-md">
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Terms of Service</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Annual Reports</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
+                href="#"
+                >Volunteer Portal</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-1">
+          <h5
+            class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed mb-6"
+          >
+            Contact Us
+          </h5>
+          <p
+            class="text-on-primary/80 font-body-md mb-4 flex items-center gap-3"
+          >
+            <span class="material-symbols-outlined text-secondary-fixed text-sm"
+              >location_on</span
+            >
+            Foundation Tower, Knowledge City<br />Calicut, Kerala, India
+          </p>
+          <p class="text-on-primary/80 font-body-md flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed text-sm"
+              >mail</span
+            >
+            info@alhikmah.org
+          </p>
+        </div>
+      </div>
+      <div
+        class="border-t border-white/10 py-8 px-gutter text-center text-on-primary/50 font-body-md"
+      >
+        © 2024 Al-Hikmah Foundation. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      // Scroll Reveal Animation
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+            // Trigger counter if it's a statistic
+            if (reveals[i].querySelector("[data-target]")) {
+              startCounter(reveals[i].querySelector("[data-target]"));
+            }
+          }
+        }
+      }
+
+      // Counter Animation
+      function startCounter(el) {
+        if (el.dataset.started === "true") return;
+        el.dataset.started = "true";
+        const target = +el.getAttribute("data-target");
+        const speed = 200;
+        const inc = target / speed;
+
+        const updateCount = () => {
+          const currentStr = el.innerText
+            .replace("+", "")
+            .replace("k", "000")
+            .replace(",", "");
+          const current = parseFloat(currentStr) || 0;
+          if (current < target) {
+            const nextValue = Math.ceil(current + inc);
+            el.innerText =
+              nextValue > target
+                ? target + "+"
+                : nextValue >= 1000
+                  ? (nextValue / 1000).toFixed(0) + "k+"
+                  : nextValue + "+";
+            setTimeout(updateCount, 1);
+          } else {
+            el.innerText =
+              target >= 1000 ? (target / 1000).toFixed(0) + "k+" : target + "+";
+          }
+        };
+        updateCount();
+      }
+
+      window.addEventListener("scroll", reveal);
+      reveal();
+
+      // Navbar Scroll Effect
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          nav.classList.add("py-2", "shadow-md");
+          nav.classList.remove("py-4", "shadow-sm");
+        } else {
+          nav.classList.add("py-4", "shadow-sm");
+          nav.classList.remove("py-2", "shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>

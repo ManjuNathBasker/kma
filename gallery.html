@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | AL-HIKMAH Foundation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#5c3f40",
+                    "inverse-on-surface": "#f2f0ee",
+                    "on-tertiary-fixed": "#2c1516",
+                    "on-error-container": "#93000a",
+                    "surface": "#fbf9f7",
+                    "on-background": "#1b1c1b",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad7",
+                    "outline": "#737873",
+                    "primary-fixed": "#d0e8d7",
+                    "inverse-surface": "#30312f",
+                    "primary-container": "#3d5245",
+                    "surface-container-high": "#e9e8e5",
+                    "surface-container-low": "#f5f3f1",
+                    "on-secondary-fixed": "#261900",
+                    "on-primary-container": "#adc4b4",
+                    "on-error": "#ffffff",
+                    "tertiary": "#4b3031",
+                    "secondary-container": "#fed488",
+                    "outline-variant": "#c2c8c2",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#0b1f15",
+                    "secondary": "#775a19",
+                    "secondary-fixed-dim": "#e9c176",
+                    "surface-tint": "#4e6356",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#ffdea5",
+                    "primary-fixed-dim": "#b5ccbb",
+                    "primary": "#273b2f",
+                    "on-surface": "#1b1c1b",
+                    "tertiary-fixed-dim": "#e5bdbd",
+                    "surface-container-highest": "#e3e2e0",
+                    "surface-variant": "#e3e2e0",
+                    "surface-container": "#efeeeb",
+                    "on-secondary-container": "#785a1a",
+                    "inverse-primary": "#b5ccbb",
+                    "tertiary-container": "#644647",
+                    "surface-bright": "#fbf9f7",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "on-surface-variant": "#424844",
+                    "background": "#fbf9f7",
+                    "tertiary-fixed": "#ffdada",
+                    "on-primary-fixed-variant": "#374b3f",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#deb5b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "section-padding": "80px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "display-lg-mobile": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+        }
+        .masonry-grid {
+            columns: 1;
+        }
+        @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+        .geometric-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(39, 59, 47, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out">
+<nav class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="AL-HIKMAH Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"/>
+<span class="font-headline-md text-headline-md text-primary tracking-tight font-bold">AL-HIKMAH</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Home</a>
+<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Programs</a>
+<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Events</a>
+<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Donations</a>
+<a class="text-on-surface hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:bg-primary-container transition-colors duration-300">
+                Donate Now
+            </button>
+</nav>
+</header>
+<main class="pt-32 geometric-pattern min-h-screen">
+<!-- Hero Section -->
+<section class="px-gutter max-w-container-max mx-auto mb-16 text-center">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md mb-6 uppercase tracking-widest text-[10px]">Visual Journey</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 font-extrabold">Our Impact in Frames</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Witness the transformation of communities through our dedicated initiatives in education, social welfare, and cultural events.
+            </p>
+</section>
+<!-- Filter Controls -->
+<section class="px-gutter max-w-container-max mx-auto mb-12">
+<div class="flex flex-wrap justify-center gap-4">
+<button class="gallery-filter-btn active px-8 py-2 rounded-full font-label-md border-1.5 border-primary bg-primary text-on-primary transition-all duration-300 shadow-sm" onclick="filterGallery('all')">All Stories</button>
+<button class="gallery-filter-btn px-8 py-2 rounded-full font-label-md border border-outline-variant hover:border-primary transition-all duration-300" onclick="filterGallery('education')">Education</button>
+<button class="gallery-filter-btn px-8 py-2 rounded-full font-label-md border border-outline-variant hover:border-primary transition-all duration-300" onclick="filterGallery('welfare')">Social Welfare</button>
+<button class="gallery-filter-btn px-8 py-2 rounded-full font-label-md border border-outline-variant hover:border-primary transition-all duration-300" onclick="filterGallery('events')">Events</button>
+</div>
+</section>
+<!-- Gallery Grid -->
+<section class="px-gutter max-w-container-max mx-auto pb-section-padding">
+<div class="masonry-grid gap-6" id="gallery-container">
+<!-- Education Item 1 -->
+<div class="masonry-item gallery-card education group overflow-hidden rounded-[24px] relative" data-category="education">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A group of diverse young students sitting in a modern, sun-drenched library at Al-Hikmah Academy. The lighting is warm and natural, highlighting the soft beige and earthy green interior design. The atmosphere is quiet and studious, reflecting the premium educational environment focused on community empowerment and excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwUA5JZ-_R100Fl7XcLunK9ghNVyzlhxIsAGWr_wc1eUZJytBCPv9ZRg6_4WxlkEw9f508F0CwW6G6mNZfW_u9WWRqwLpeCzUzPrij4ZuFN-cUYxHUUPf6ubxZbT-SgkwKdBHePjtLF3Q07LobKvPAYbfx8WVoGEuiksECudFsC81DyWuJgaH3reEyZuuEVomCl9JLAXI-3RI7dDBrqTdzAu8sPIeoHNYJJlOmDGXwm7Mjv71vWgKYDxWmjelS4Kv6o_5YbJ2NA_0"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<p class="text-white font-label-md mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 uppercase">Education</p>
+<h3 class="text-white font-headline-md opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 font-bold">Future Leaders Seminar</h3>
+</div>
+</div>
+<!-- Welfare Item 1 -->
+<div class="masonry-item gallery-card welfare group overflow-hidden rounded-[24px] relative" data-category="welfare">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A compassionate volunteer handing out fresh, nutritious meals to a family in a clean, brightly lit community center. The setting is modern and welcoming, featuring large windows and soft cream walls. The high-key lighting creates an atmosphere of hope and dignity, aligning with the NGO's social welfare mission." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjyxnl0W8kmCV5udIXinP7JIpsO-fHpHHVzO_NEn62gJRiY6JGZ6S3J3bDn0UAipDkV5_6w4HS0j06dKuNLsNS6mH6uk-pqP-M9HA1b1slBos6Cl-juNER-jUKEiSIU7YOWzlxNEaX2dK0VO0YCMAQNNaN3RpVPRjr2pFewabUjjG8yELi_9NfUnqe4Gdx20jhnFXmnbI2-tNrxcHS9LvJKvZQq1HJZwucMGYGhD8U0X6iqc1E6EsTjP30sxpaZ5Dy9JWfjaXR_iI"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<p class="text-white font-label-md mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 uppercase">Social Welfare</p>
+<h3 class="text-white font-headline-md opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 font-bold">Community Food Drive</h3>
+</div>
+</div>
+<!-- Events Item 1 -->
+<div class="masonry-item gallery-card events group overflow-hidden rounded-[24px] relative" data-category="events">
+<div class="aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An elegant evening gala hosted by Al-Hikmah Foundation, featuring sophisticated table settings with gold accents and earthy green floral arrangements. The venue is illuminated by soft, cinematic warm lighting, creating an atmosphere of prestigious celebration and community bonding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2xuvrWAIt7Qqr1l62gfQbeb7BeCYqL1hcsKpaFIvnBytXuF_JhIgfyQMlFxTrhvsXK3ZKafPN6W70Gpvlh8Un7IcCYKm6-6EioYJ5TMXaRBGn4EHJYumdrMBHLRdHl0Q1R4t4cerN7A8aLOz5hbbFcwwob-NcQY8m2g_AEkkztGfxOHgps83q2GIcZ2_tMFbPoM-LlDhJ2Nv37s125_UV-XIe8S4IMKCApQmxVNb_CI-nyX4u68o-00fO38agjV34S3j4TPPnhcQ"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<p class="text-white font-label-md mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 uppercase">Events</p>
+<h3 class="text-white font-headline-md opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 font-bold">Annual Gala Night</h3>
+</div>
+</div>
+<!-- Education Item 2 -->
+<div class="masonry-item gallery-card education group overflow-hidden rounded-[24px] relative" data-category="education">
+<div class="aspect-video overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A focused classroom setting where a teacher is using a digital smartboard to teach calligraphy to students. The room is designed with minimalist aesthetics, high ceilings, and light wood textures. The atmosphere is one of modern heritage, blending traditional learning with technological precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSGBdKe_GLw8-KakQ4IRg78Z3V7tJSrGANOtvwZwKV0Er8FLRu7f371vU98aGOd5sX3n7LuhdCZpI162cr94Whqf4NWVnTdkhymtbUFcGE4_4rm4AInrIAW3IuG2MLoJWJj1JLeuevvXM7kQ8x5_yVfDZQR5qbXtcNvVhQw9UEn1ZmUnJECC_NysmvPFcBBCaKJDjW92OJdStHWD7zfN3vPlWDQP9mfswCFSY2ipgYM9nGX2PyUEv7cBTfjX8R_ea4Uav0CL9gYe0"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<p class="text-white font-label-md mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 uppercase">Education</p>
+<h3 class="text-white font-headline-md opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 font-bold">Digital Literacy Program</h3>
+</div>
+</div>
+<!-- Welfare Item 2 -->
+<div class="masonry-item gallery-card welfare group overflow-hidden rounded-[24px] relative" data-category="welfare">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A serene mobile medical clinic interior where a healthcare professional is consulting with an elderly patient. The space is exceptionally clean, with soft indirect lighting and calming light beige surfaces. The scene conveys professional authority and compassionate care in a modern medical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_hntkgBk6UPGHLSpL19cLsp9q7mIG_IfgFRyDZ7TJ2c7NW4pZPGFtVlIoZMtIUhJ0KgnCjSanvgyUyEJU3UuFZ5LTzmFXYPeVmvhpS-QVOcvYDPXuuE5bQco-xfOrMCFi1nne25Fb1HdbjpmJgvtIduQ5NsgUuv10n534LYjvBGz_q_peZqKc8qjkKhoLbUgU21ZU-YxOEBStJWFk5rMt2YHFr0swXJSfM9zqFXZ6R0lqQXIJwpKU34Dy76z9za38vra7n2mB_2E"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<p class="text-white font-label-md mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 uppercase">Social Welfare</p>
+<h3 class="text-white font-headline-md opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 font-bold">Mobile Health Clinic</h3>
+</div>
+</div>
+<!-- Events Item 2 -->
+<div class="masonry-item gallery-card events group overflow-hidden rounded-[24px] relative" data-category="events">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A large-scale outdoor community festival at sunset, with children playing in the foreground and a stage setup in the background. The lighting is golden and ethereal, casting long shadows over a manicured green lawn. The mood is joyful and energetic, representing the community warmth and accessibility of Al-Hikmah." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN01c53vSz3m3Z-DJTUj5eRcmNMMA2fbNR6AsnZR_BsedVEOoJX0unfr6dxIACoXJMg_PmYZCohod2vY4S1wUKBKdcqULlh4U0UUCvCjlHsA-Bkgbs1Uey-3WqGLDyIyj7YakSouQF_i72DrZFl_a_bFlArY4gT6rNmX_CZp6hiCz6QatVN_A11w_frwkKbmoCFyWglpPgU1HvIEruUy2jdLgLERpBcafXZHOCa0hja57ZzGeeGkbzx0D3wA0eB1hWS7gjGtAjlYY"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<p class="text-white font-label-md mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 uppercase">Events</p>
+<h3 class="text-white font-headline-md opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 font-bold">Youth Empowerment Festival</h3>
+</div>
+</div>
+<!-- Education Item 3 -->
+<div class="masonry-item gallery-card education group overflow-hidden rounded-[24px] relative" data-category="education">
+<div class="aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end vocational training workshop where young adults are learning architectural design on sleek workstations. The office environment features glass partitions, geometric carpet patterns, and premium task lighting. The overall style is high-contrast, professional, and forward-thinking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4h1JdcELwHPKOzX8fg9SC2RjTF6yfLW_JttXoYg5WVwd68uE_axK1KTpFLyPi0AG0aWnv2UurEX1b392v70AvxW4BWJnmeuw4Otf01Vi45jC4It5a3tToBG-Qqej47r5jI0GBhLX_LJKN-kKNEZIVQw23hq8OjD4vBzbsMvRKN1aoeo1I7-7HDDO2OJDZh2ukb_NqgjrbiF-EVVcHfd2dFTHo9ppfwKoKN-C2C2QLAVHcJggUm0B4leQx98Em5Bw1kgSTHX9gNs"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<p class="text-white font-label-md mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 uppercase">Education</p>
+<h3 class="text-white font-headline-md opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 font-bold">Vocational Skills Hub</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-gutter pb-section-padding">
+<div class="max-w-4xl mx-auto glass-card rounded-[32px] p-12 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary-container/10 rounded-full -ml-24 -mb-24"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6 relative z-10 font-bold">Be Part of the Story</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10 relative z-10 max-w-xl mx-auto">
+                    Your contribution helps us create more moments of joy, learning, and support. Join our mission to build a brighter future for all.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md hover:bg-primary-container transition-all transform hover:-translate-y-1 shadow-md">Donate to a Project</button>
+<button class="border border-secondary text-secondary px-10 py-4 rounded-full font-label-md hover:bg-secondary-fixed transition-all transform hover:-translate-y-1">Become a Volunteer</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full relative overflow-hidden">
+<div class="bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-opacity-5 absolute inset-0 pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto relative z-10">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<img alt="AL-HIKMAH" class="h-10 w-10 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"/>
+<span class="font-headline-md text-headline-md text-on-primary font-bold">AL-HIKMAH</span>
+</div>
+<p class="text-on-primary/70 font-body-md mb-6">
+                    Empowering through wisdom, serving with compassion. A beacon of hope for the global community.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">mail</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">share</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-on-primary mb-6 font-bold">Explore</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Our History</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">The Academy</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Zakat Initiatives</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Impact Stories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-on-primary mb-6 font-bold">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Annual Reports</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Volunteer Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-on-primary mb-6 font-bold">Contact Us</h4>
+<p class="text-on-primary/80 mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                    123 Wisdom Way, Cultural District
+                </p>
+<p class="text-on-primary/80 mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">call</span>
+                    +1 (555) 888-HIKMAH
+                </p>
+<p class="text-on-primary/80 flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">mail</span>
+                    info@al-hikmah.org
+                </p>
+</div>
+</div>
+<div class="border-t border-white/10 px-gutter py-8 max-w-container-max mx-auto text-center">
+<p class="text-on-primary/60 text-body-md">© 2024 Al-Hikmah Foundation. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-card');
+            const buttons = document.querySelectorAll('.gallery-filter-btn');
+            
+            // Update active button state
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-on-primary', 'border-primary', 'active');
+                btn.classList.add('border-outline-variant');
+            });
+
+            const activeBtn = Array.from(buttons).find(btn => 
+                category === 'all' ? btn.textContent.toLowerCase() === 'all stories' : btn.textContent.toLowerCase() === category
+            );
+            
+            if(activeBtn) {
+                activeBtn.classList.add('bg-primary', 'text-on-primary', 'border-primary', 'active');
+                activeBtn.classList.remove('border-outline-variant');
+            }
+
+            // Filter items with fade effect
+            items.forEach(item => {
+                item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 400);
+                }
+            });
+        }
+
+        // Initialize gallery with a slight stagger animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.gallery-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'bg-surface/90', 'shadow-md');
+                header.classList.remove('py-4', 'bg-surface/70');
+            } else {
+                header.classList.add('py-4', 'bg-surface/70');
+                header.classList.remove('py-2', 'bg-surface/90', 'shadow-md');
+            }
+        });
+    </script>
+</body></html>
