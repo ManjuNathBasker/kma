@@ -16,66 +16,9 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-      .glass-panel {
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out;
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      @keyframes bounce-slow {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      .animate-bounce-slow {
-        animation: bounce-slow 2s infinite;
-      }
-      .pattern-overlay {
-        background-image: radial-gradient(
-          circle at 2px 2px,
-          rgba(115, 120, 115, 0.05) 1px,
-          transparent 0
-        );
-        background-size: 32px 32px;
-      }
-      .masonry-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-auto-rows: 200px;
-        gap: 24px;
-      }
-      .masonry-item-tall {
-        grid-row: span 2;
-      }
-      .masonry-item-wide {
-        grid-column: span 2;
-      }
-      @media (max-width: 768px) {
-        .masonry-item-wide {
-          grid-column: span 1;
-        }
-      }
-    </style>
+    <!-- style.css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -186,56 +129,8 @@
   <body
     class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden"
   >
-    <!-- Top Navigation Bar -->
-    <nav
-      class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-variant/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out"
-    >
-      <div
-        class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto"
-      >
-        <div
-          class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight"
-        >
-          <img
-            alt="AL-HIKMAH Logo"
-            class="h-12 w-auto object-contain"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"
-          />
-        </div>
-        <div class="hidden md:flex gap-8 items-center">
-          <a
-            class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-body-md text-body-md"
-            href="index.html"
-            >Home</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="about.html"
-            >About Us</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="team_initiatives.html"
-            >Team & Initiatives</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="gallery.html"
-            >Gallery</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="contact.html"
-            >Contact</a
-          >
-        </div>
-        <button
-          class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform"
-        >
-          Donate Now
-        </button>
-      </div>
-    </nav>
+  <!-- Header -->
+    <div id="site-header"></div>
     <!-- Hero Section -->
     <header
       class="relative h-screen w-full flex items-center justify-center overflow-hidden"
@@ -276,16 +171,18 @@
             മനസ്സുകളെ ശാക്തീകരിക്കുന്നു, സമൂഹങ്ങളെ പരിപോഷിപ്പിക്കുന്നു.
           </p>
           <div class="flex flex-wrap gap-4">
-            <button
+            <a
+              href="contact.html"
               class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-secondary-fixed-dim transition-all shadow-lg"
             >
               Donate Now
-            </button>
-            <button
+            </a>
+            <a
+              href="contact.html"
               class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all"
             >
               Become Volunteer
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -379,7 +276,7 @@
           </div>
           <a
             class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:gap-4 transition-all mt-6 md:mt-0"
-            href="#"
+            href="team_initiatives.html"
           >
             VIEW ALL PROGRAMS
             <span class="material-symbols-outlined">trending_flat</span>
@@ -405,14 +302,15 @@
                   Providing scholarships, learning materials, and modern
                   infrastructure for deserving students.
                 </p>
-                <button
-                  class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-label-md text-label-md flex items-center gap-2 group-hover:bg-secondary-fixed-dim transition-colors"
+                <a
+                  href="team_initiatives.html"
+                  class="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-secondary-fixed px-6 py-2 font-label-md text-label-md text-on-secondary-fixed shadow-md transition-all hover:bg-secondary-fixed-dim hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary-fixed focus:ring-offset-2 focus:ring-offset-transparent"
                 >
                   Learn More
-                  <span class="material-symbols-outlined text-sm"
+                  <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1"
                     >arrow_forward</span
                   >
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -435,14 +333,15 @@
                   A holistic ecosystem ensuring emotional, physical, and
                   educational growth for every child in our care.
                 </p>
-                <button
-                  class="bg-white text-primary px-6 py-2 rounded-full font-label-md text-label-md flex items-center gap-2 hover:bg-surface-variant transition-colors"
+                <a
+                  href="team_initiatives.html"
+                  class="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-white px-6 py-2 font-label-md text-label-md text-primary shadow-md transition-all hover:bg-surface-variant hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
                 >
                   Support a Child
-                  <span class="material-symbols-outlined text-sm"
+                  <span class="material-symbols-outlined text-sm transition-transform group-hover:scale-110"
                     >favorite</span
                   >
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -694,142 +593,7 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
-    <footer
-      class="bg-primary dark:bg-on-primary-fixed text-on-primary dark:text-primary-fixed"
-    >
-      <div
-        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto relative overflow-hidden"
-      >
-        <div class="col-span-1 md:col-span-1">
-          <div class="font-headline-md text-headline-md text-on-primary mb-6">
-            <img
-              alt="AL-HIKMAH Logo"
-              class="h-16 w-auto object-contain brightness-0 invert"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCznizRkG8yPbnzDLXUfVImGLs5X0Q4A4XP8MIwNTibW3JLzszqiKv0m7g5I2Kwg10GUCWkTk8ZXLIhoUuhS5Er0M57Qc0T9aIATSkRuQEXKXVDp6TspPc1MOTGsrMZ_FLzL6Ru6o69Z25Dw_P_a-H0nPYfkrqK5noD-uYYc95Vda2I94shwg1hS4EhSl9SdQYbMM59rMGbbeIWEWqolVFSRtJrqHWnJQjbTVyz7iLk-hSad9_2kli8xv4jTbUk2sj9KiQIQY14M"
-            />
-          </div>
-          <p class="text-on-primary/70 font-body-md mb-8">
-            Guided by wisdom, serving with compassion. Dedicated to holistic
-            community development through education and care.
-          </p>
-          <div class="flex gap-4">
-            <a
-              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-              href="#"
-            >
-              <span class="material-symbols-outlined text-sm">public</span>
-            </a>
-            <a
-              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-              href="#"
-            >
-              <span class="material-symbols-outlined text-sm">chat</span>
-            </a>
-          </div>
-        </div>
-        <div class="col-span-1">
-          <h5
-            class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed mb-6"
-          >
-            Navigation
-          </h5>
-          <ul class="space-y-4 font-body-md">
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Home</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Our History</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Core Programs</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Donate</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="col-span-1">
-          <h5
-            class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed mb-6"
-          >
-            Resources
-          </h5>
-          <ul class="space-y-4 font-body-md">
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Privacy Policy</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Terms of Service</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Annual Reports</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-primary/80 hover:text-secondary-fixed transition-colors"
-                href="#"
-                >Volunteer Portal</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="col-span-1">
-          <h5
-            class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed mb-6"
-          >
-            Contact Us
-          </h5>
-          <p
-            class="text-on-primary/80 font-body-md mb-4 flex items-center gap-3"
-          >
-            <span class="material-symbols-outlined text-secondary-fixed text-sm"
-              >location_on</span
-            >
-            Foundation Tower, Knowledge City<br />Calicut, Kerala, India
-          </p>
-          <p class="text-on-primary/80 font-body-md flex items-center gap-3">
-            <span class="material-symbols-outlined text-secondary-fixed text-sm"
-              >mail</span
-            >
-            info@alhikmah.org
-          </p>
-        </div>
-      </div>
-      <div
-        class="border-t border-white/10 py-8 px-gutter text-center text-on-primary/50 font-body-md"
-      >
-        © 2024 Al-Hikmah Foundation. All rights reserved.
-      </div>
-    </footer>
+    <div id="site-footer"></div>
     <script>
       // Scroll Reveal Animation
       function reveal() {
@@ -885,6 +649,7 @@
       // Navbar Scroll Effect
       window.addEventListener("scroll", function () {
         const nav = document.querySelector("nav");
+        if (!nav) return;
         if (window.scrollY > 50) {
           nav.classList.add("py-2", "shadow-md");
           nav.classList.remove("py-4", "shadow-sm");
@@ -894,5 +659,6 @@
         }
       });
     </script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
