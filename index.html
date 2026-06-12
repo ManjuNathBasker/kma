@@ -133,7 +133,7 @@
     <div id="site-header"></div>
     <!-- Hero Section -->
     <header
-      class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      class="relative min-h-screen w-full flex items-start md:items-center justify-center overflow-hidden pt-40 pb-12 md:pt-0 md:pb-0"
     >
       <div class="absolute inset-0 z-0">
         <img
@@ -142,15 +142,15 @@
           src="assets/images/banner.jpeg"
         />
         <div
-          class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"
+          class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/35 to-transparent"
         ></div>
       </div>
-      <div class="relative z-10 px-gutter w-full max-w-container-max">
+      <div class="relative z-10 px-5 md:px-gutter w-full max-w-container-max">
         <div
-          class="max-w-3xl glass-panel bg-black/40 p-8 md:p-12 rounded-3xl reveal active"
+          class="max-w-[20rem] md:max-w-3xl glass-panel bg-black/45 p-7 sm:p-8 md:p-12 rounded-3xl reveal active"
         >
           <div
-            class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/30"
+            class="hidden sm:inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/30"
           >
             <span
               class="material-symbols-outlined text-secondary-fixed-dim text-sm"
@@ -163,23 +163,25 @@
             >
           </div>
           <h1
-            class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight"
+            class="font-display-lg text-[32px] sm:text-display-lg-mobile md:text-display-lg text-white mb-5 leading-tight"
           >
             Empowering Minds, <br />Enriching Communities.
           </h1>
-          <p class="font-body-lg text-body-lg text-white/90 mb-8 max-w-xl">
+          <p
+            class="font-body-lg text-[18px] leading-relaxed md:text-body-lg text-white/90 mb-8 max-w-[14rem] sm:max-w-xl"
+          >
             മനസ്സുകളെ ശാക്തീകരിക്കുന്നു, സമൂഹങ്ങളെ പരിപോഷിപ്പിക്കുന്നു.
           </p>
-          <div class="flex flex-wrap gap-4">
+          <div class="flex flex-col sm:flex-row sm:flex-wrap items-start gap-4">
             <a
               href="contact.html"
-              class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-secondary-fixed-dim transition-all shadow-lg"
+              class="inline-flex min-w-36 items-center justify-center bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-secondary-fixed-dim transition-all shadow-lg"
             >
               Donate Now
             </a>
             <a
               href="contact.html"
-              class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all"
+              class="inline-flex min-w-44 items-center justify-center bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all"
             >
               Become Volunteer
             </a>
@@ -188,7 +190,7 @@
       </div>
       <!-- Animated Scroll Indicator -->
       <div
-        class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60"
+        class="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/60"
       >
         <span class="font-label-md text-[10px] uppercase tracking-widest"
           >Scroll to explore</span

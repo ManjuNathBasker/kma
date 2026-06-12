@@ -1,50 +1,110 @@
- <nav
-      class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-variant/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out"
+<nav
+  class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-variant/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all py-2 duration-300 ease-in-out"
+>
+  <div
+    class="flex justify-between items-center gap-3 px-gutter py-2 max-w-container-max mx-auto"
+  >
+    <div
+      class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight"
     >
-      <div
-        class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto"
-      >
-        <div
-          class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight"
-        >
         <a href="/">
           <img
             alt="AL-HIKMAH Logo"
             class="h-16 w-auto logo-header object-contain"
             src="assets/images/logo.png"
           /></a>
-        </div>
-        <div class="hidden md:flex gap-8 items-center">
-          <a
-            class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-body-md text-body-md"
-            href="index.html"
-            >Home</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="about.html"
-            >About Us</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="team_initiatives.html"
-            >Team & Initiatives</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="gallery.html"
-            >Gallery</a
-          >
-          <a
-            class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
-            href="contact.html"
-            >Contact</a
-          >
-        </div>
-        <a
-          class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform no-underline"
-          href="contact.html"
-          >Donate Now</a
-        >
-      </div>
-    </nav>
+    </div>
+    <div class="hidden md:flex gap-8 items-center">
+      <a
+        class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-body-md text-body-md"
+        data-nav-link
+        href="index.html"
+        >Home</a
+      >
+      <a
+        class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+        data-nav-link
+        href="about.html"
+        >About Us</a
+      >
+      <a
+        class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+        data-nav-link
+        href="team_initiatives.html"
+        >Team & Initiatives</a
+      >
+      <a
+        class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+        data-nav-link
+        href="gallery.html"
+        >Gallery</a
+      >
+      <a
+        class="text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md"
+        data-nav-link
+        href="contact.html"
+        >Contact</a
+      >
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a
+        class="hidden md:inline-flex bg-primary text-on-primary px-4 sm:px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform no-underline whitespace-nowrap"
+        href="contact.html"
+        >Donate Now</a
+      >
+      <button
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+        class="md:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-outline/30 bg-surface-container-low text-primary shadow-sm transition-colors hover:bg-surface-container"
+        data-mobile-menu-toggle
+        type="button"
+      >
+        <span class="material-symbols-outlined" data-mobile-menu-icon>menu</span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="hidden md:hidden border-t border-outline-variant/60 bg-surface/95 dark:bg-surface-variant/95 shadow-lg"
+    data-mobile-menu
+    id="mobile-menu"
+  >
+    <div class="flex flex-col gap-1 px-gutter py-4 max-w-container-max mx-auto">
+      <a
+        class="w-fit text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md py-2"
+        data-nav-link
+        href="index.html"
+        >Home</a
+      >
+      <a
+        class="w-fit text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md py-2"
+        data-nav-link
+        href="about.html"
+        >About Us</a
+      >
+      <a
+        class="w-fit text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md py-2"
+        data-nav-link
+        href="team_initiatives.html"
+        >Team & Initiatives</a
+      >
+      <a
+        class="w-fit text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md py-2"
+        data-nav-link
+        href="gallery.html"
+        >Gallery</a
+      >
+      <a
+        class="w-fit text-on-surface dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-300 font-body-md text-body-md py-2"
+        data-nav-link
+        href="contact.html"
+        >Contact</a
+      >
+      <a
+        class="mt-3 inline-flex w-fit min-w-40 items-center justify-center bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:scale-[1.02] transition-transform no-underline"
+        href="contact.html"
+        >Donate Now</a
+      >
+    </div>
+  </div>
+</nav>

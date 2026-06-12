@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (headerTarget) {
     await loadPartial(headerTarget, "header.html", () => {
       setActiveNavLink(headerTarget);
+      initMobileMenu(headerTarget);
     });
   }
 
@@ -48,7 +49,7 @@ function setActiveNavLink(headerTarget) {
     "duration-300",
   ];
 
-  headerTarget.querySelectorAll("nav .hidden.md\\:flex a[href]").forEach((link) => {
+  headerTarget.querySelectorAll("[data-nav-link]").forEach((link) => {
     const linkPage = link.getAttribute("href");
     link.removeAttribute("aria-current");
     link.classList.remove(...activeClasses);
@@ -58,6 +59,54 @@ function setActiveNavLink(headerTarget) {
       link.setAttribute("aria-current", "page");
       link.classList.add(...activeClasses);
       link.classList.remove(...inactiveClasses);
+    }
+  });
+}
+
+function initMobileMenu(headerTarget) {
+  const toggle = headerTarget.querySelector("[data-mobile-menu-toggle]");
+  const menu = headerTarget.querySelector("[data-mobile-menu]");
+  const icon = headerTarget.querySelector("[data-mobile-menu-icon]");
+
+  if (!toggle || !menu) {
+    return;
+  }
+
+  const closeMenu = () => {
+    menu.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation menu");
+
+    if (icon) {
+      icon.textContent = "menu";
+    }
+  };
+
+  const openMenu = () => {
+    menu.classList.remove("hidden");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close navigation menu");
+
+    if (icon) {
+      icon.textContent = "close";
+    }
+  };
+
+  toggle.addEventListener("click", () => {
+    if (menu.classList.contains("hidden")) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+
+  menu.querySelectorAll("a[href]").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      closeMenu();
     }
   });
 }
