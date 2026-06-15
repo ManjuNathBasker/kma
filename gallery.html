@@ -4,12 +4,14 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Gallery | AL-HIKMAH Foundation</title>
+    <title>Gallery | KMA</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -188,7 +190,11 @@
       </section>
 
       <section class="px-gutter max-w-container-max mx-auto pb-section-padding">
-        <div aria-live="polite" class="masonry-grid" id="gallery-container"></div>
+        <div
+          aria-live="polite"
+          class="masonry-grid"
+          id="gallery-container"
+        ></div>
       </section>
 
       <section class="px-gutter pb-section-padding">
@@ -257,7 +263,7 @@
     <script>
       const galleryImages = Array.from(
         { length: 28 },
-        (_, index) => `gallery${index + 1}.jpeg`
+        (_, index) => `gallery${index + 1}.jpeg`,
       );
 
       const galleryPath = "assets/images/gallery/";
