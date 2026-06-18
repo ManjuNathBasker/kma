@@ -240,6 +240,8 @@
 
     <div
       aria-hidden="true"
+      aria-label="Gallery image viewer"
+      aria-modal="true"
       class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4"
       id="gallery-lightbox"
       role="dialog"
@@ -252,9 +254,25 @@
       >
         <span class="material-symbols-outlined">close</span>
       </button>
+      <button
+        aria-label="Show previous gallery image"
+        class="absolute left-3 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white sm:left-6 sm:h-14 sm:w-14"
+        data-lightbox-prev
+        type="button"
+      >
+        <span class="material-symbols-outlined text-4xl">chevron_left</span>
+      </button>
+      <button
+        aria-label="Show next gallery image"
+        class="absolute right-3 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white sm:right-6 sm:h-14 sm:w-14"
+        data-lightbox-next
+        type="button"
+      >
+        <span class="material-symbols-outlined text-4xl">chevron_right</span>
+      </button>
       <img
         alt=""
-        class="max-h-[88vh] max-w-full rounded-lg object-contain shadow-2xl"
+        class="max-h-[88vh] max-w-full select-none rounded-lg object-contain shadow-2xl sm:max-w-[calc(100vw-10rem)]"
         data-lightbox-image
       />
     </div>
@@ -267,6 +285,7 @@
       );
 
       const galleryPath = "assets/images/gallery/";
+      let activeLightboxIndex = -1;
 
       function renderGallery() {
         const galleryContainer = document.querySelector("#gallery-container");
@@ -296,7 +315,7 @@
           img.src = imageUrl;
 
           button.addEventListener("click", () => {
-            openLightbox(imageUrl, alt);
+            openLightbox(index);
           });
 
           button.appendChild(img);
@@ -305,20 +324,58 @@
         });
       }
 
-      function openLightbox(src, alt) {
-        const lightbox = document.querySelector("#gallery-lightbox");
+      function getGalleryImage(index) {
+        const imageIndex =
+          (index + galleryImages.length) % galleryImages.length;
+
+        return {
+          alt: `AL-HIKMAH Foundation gallery photo ${imageIndex + 1}`,
+          index: imageIndex,
+          src: `${galleryPath}${galleryImages[imageIndex]}`,
+        };
+      }
+
+      function showLightboxImage(index) {
         const lightboxImage = document.querySelector("[data-lightbox-image]");
 
-        if (!lightbox || !lightboxImage) {
+        if (!lightboxImage) {
           return;
         }
 
-        lightboxImage.src = src;
-        lightboxImage.alt = alt;
+        const image = getGalleryImage(index);
+        activeLightboxIndex = image.index;
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+      }
+
+      function openLightbox(index) {
+        const lightbox = document.querySelector("#gallery-lightbox");
+
+        if (!lightbox) {
+          return;
+        }
+
+        showLightboxImage(index);
         lightbox.classList.remove("hidden");
         lightbox.classList.add("flex");
         lightbox.setAttribute("aria-hidden", "false");
         document.body.classList.add("overflow-hidden");
+      }
+
+      function showPreviousImage() {
+        if (activeLightboxIndex < 0) {
+          return;
+        }
+
+        showLightboxImage(activeLightboxIndex - 1);
+      }
+
+      function showNextImage() {
+        if (activeLightboxIndex < 0) {
+          return;
+        }
+
+        showLightboxImage(activeLightboxIndex + 1);
       }
 
       function closeLightbox() {
@@ -334,6 +391,7 @@
         lightbox.setAttribute("aria-hidden", "true");
         lightboxImage.removeAttribute("src");
         lightboxImage.alt = "";
+        activeLightboxIndex = -1;
         document.body.classList.remove("overflow-hidden");
       }
 
@@ -342,9 +400,19 @@
 
         const lightbox = document.querySelector("#gallery-lightbox");
         const closeButton = document.querySelector("[data-lightbox-close]");
+        const previousButton = document.querySelector("[data-lightbox-prev]");
+        const nextButton = document.querySelector("[data-lightbox-next]");
 
         if (closeButton) {
           closeButton.addEventListener("click", closeLightbox);
+        }
+
+        if (previousButton) {
+          previousButton.addEventListener("click", showPreviousImage);
+        }
+
+        if (nextButton) {
+          nextButton.addEventListener("click", showNextImage);
         }
 
         if (lightbox) {
@@ -357,8 +425,22 @@
       });
 
       window.addEventListener("keydown", (event) => {
+        if (activeLightboxIndex < 0) {
+          return;
+        }
+
         if (event.key === "Escape") {
           closeLightbox();
+        }
+
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          showPreviousImage();
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          showNextImage();
         }
       });
 

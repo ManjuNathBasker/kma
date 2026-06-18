@@ -132,22 +132,18 @@
     <!-- Header -->
     <div id="site-header"></div>
     <!-- Hero Section -->
-    <header
-      class="relative min-h-screen w-full flex items-start md:items-center justify-center overflow-hidden pt-40 pb-12 md:pt-0 md:pb-0"
-    >
+    <header class="hero-section relative w-full flex justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img
-          class="w-full h-full object-cover"
+          class="hero-bg-image w-full h-full object-cover"
           data-alt="A grand, architectural campus of an educational institution at twilight. The building features elegant arches and modern stone work, illuminated by warm amber lights against a deep navy sky. The environment is serene and prestigious, conveying a sense of academic excellence and heritage through a cinematic, high-contrast visual style with soft shadows."
           src="assets/images/banner.jpeg"
         />
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/35 to-transparent"
-        ></div>
+        <div class="hero-overlay absolute inset-0"></div>
       </div>
-      <div class="relative z-10 px-5 md:px-gutter w-full max-w-container-max">
+      <div class="hero-container relative z-10 w-full max-w-container-max">
         <div
-          class="max-w-[20rem] md:max-w-3xl glass-panel bg-black/45 p-7 sm:p-8 md:p-12 rounded-3xl reveal active"
+          class="hero-card glass-panel bg-black/45 reveal active"
         >
           <div
             class="hidden sm:inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/30"
@@ -163,31 +159,49 @@
             >
           </div>
           <h1
-            class="font-display-lg text-[32px] sm:text-display-lg-mobile md:text-display-lg text-white mb-5 leading-tight"
+            class="hero-title font-display-lg text-white leading-tight"
           >
             Empowering Minds, <br />Enriching Communities.
           </h1>
           <p
-            class="font-body-lg text-[18px] leading-relaxed md:text-body-lg text-white/90 mb-8 max-w-[14rem] sm:max-w-xl"
+            class="hero-copy font-body-lg text-white/90 mb-4"
           >
             യു എ ഇ യിൽ ജോലി ചെയ്യുന്ന കോടമ്പുഴ പ്രദേശത്തുകാരുടെ നേതൃത്വത്തിൽ
             27-10-2006 ന് ദുബൈയിൽ രൂപീകൃതമായ ഒരു കൂട്ടായ്മയാണ് യു എ ഇ - കോടമ്പുഴ
-            മുസ്ലിം അസ്സോസിയേഷൻ അഥവാ യു എ ഇ - കെ എം എ . <br />
-
+            മുസ്ലിം അസ്സോസിയേഷൻ അഥവാ യു എ ഇ - കെ എം എ .
+          </p>
+          <p
+            id="hero-more-content"
+            class="hero-copy hidden font-body-lg text-white/90 mb-4"
+          >
             നാട്ടിലേയോ മറുനാട്ടിലേയോ ഒരു സംഘടനയുമായും ബന്ധമില്ലാത്ത, ലിഖിതമായ
             ഭരണഘടനയുടെ പിൻബലത്തിൽ പ്രവർത്തിക്കുന്ന സ്വതന്ത്രമായ ഒരു
             കൂട്ടായ്മയാണ് ഇത്.
           </p>
-          <div class="flex flex-col sm:flex-row sm:flex-wrap items-start gap-4">
+          <button
+            type="button"
+            aria-controls="hero-more-content"
+            aria-expanded="false"
+            data-hero-read-more
+            class="hero-read-more flex w-fit items-center gap-2 text-secondary-fixed-dim font-label-md text-label-md hover:gap-3 hover:text-secondary-fixed transition-all"
+          >
+            <span data-read-more-label>Read More</span>
+            <span class="material-symbols-outlined text-base" data-read-more-icon
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div
+            class="hero-actions flex flex-col sm:flex-row sm:flex-wrap items-start gap-4"
+          >
             <a
               href="contact.html"
-              class="inline-flex min-w-36 items-center justify-center bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-secondary-fixed-dim transition-all shadow-lg"
+              class="hero-action-link inline-flex min-w-36 items-center justify-center bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-secondary-fixed-dim transition-all shadow-lg"
             >
-              Donate Now
+              Contact Us
             </a>
             <a
               href="contact.html"
-              class="inline-flex min-w-44 items-center justify-center bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all"
+              class="hero-action-link inline-flex min-w-44 items-center justify-center bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all"
             >
               Become Volunteer
             </a>
@@ -671,7 +685,7 @@
           </div>
           <div class="col-span-2 md:col-span-4 mt-6 flex justify-center reveal">
             <a
-              href="team_initiatives.html"
+              href="team_initiatives.html#members"
               class="border-2 border-primary text-primary px-10 py-3 rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all"
             >
               View All Members
@@ -846,6 +860,38 @@
 
       window.addEventListener("scroll", reveal);
       reveal();
+
+      const heroReadMoreButton = document.querySelector(
+        "[data-hero-read-more]",
+      );
+      const heroMoreContent = document.getElementById("hero-more-content");
+
+      if (heroReadMoreButton && heroMoreContent) {
+        const readMoreLabel = heroReadMoreButton.querySelector(
+          "[data-read-more-label]",
+        );
+        const readMoreIcon = heroReadMoreButton.querySelector(
+          "[data-read-more-icon]",
+        );
+
+        heroReadMoreButton.addEventListener("click", function () {
+          const isExpanded =
+            heroReadMoreButton.getAttribute("aria-expanded") === "true";
+
+          heroReadMoreButton.setAttribute("aria-expanded", String(!isExpanded));
+          heroMoreContent.classList.toggle("hidden", isExpanded);
+
+          if (readMoreLabel) {
+            readMoreLabel.textContent = isExpanded ? "Read More" : "Show Less";
+          }
+
+          if (readMoreIcon) {
+            readMoreIcon.textContent = isExpanded
+              ? "keyboard_arrow_down"
+              : "keyboard_arrow_up";
+          }
+        });
+      }
 
       // Navbar Scroll Effect
       window.addEventListener("scroll", function () {
