@@ -7,6 +7,10 @@
     <title>KMA - Empowering Minds, Enriching Communities</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap"
       rel="stylesheet"
     />
@@ -132,7 +136,9 @@
     <!-- Header -->
     <div id="site-header"></div>
     <!-- Hero Section -->
-    <header class="hero-section relative w-full flex justify-center overflow-hidden">
+    <header
+      class="hero-section relative w-full flex justify-center overflow-hidden"
+    >
       <div class="absolute inset-0 z-0">
         <img
           class="hero-bg-image w-full h-full object-cover"
@@ -141,11 +147,9 @@
         />
         <div class="hero-overlay absolute inset-0"></div>
       </div>
-      <div class="hero-container relative z-10 w-full w-container">
-        <div
-          class="hero-card glass-panel reveal active"
-        >
-          <div
+      <div class="hero-container relative z-10 w-full w-container mt-8">
+        <div class="hero-card glass-panel reveal active">
+          <!-- <div
             class="hidden sm:inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/30"
           >
             <span
@@ -153,19 +157,12 @@
               style="font-variation-settings: &quot;FILL&quot; 1"
               >auto_awesome</span
             >
-            <span
-              class="text-secondary-fixed-dim font-label-md text-label-md uppercase tracking-widest"
-              >Heritage of Wisdom</span
-            >
-          </div>
-          <h1
-            class="hero-title text-display-lg text-white leading-tight"
-          >
-            Empowering Minds, <br />Enriching Communities.
+            <span class="text-secondary-fixed-dim font-label-md text-label-md uppercase tracking-widest" >Heritage of Wisdom</span >
+          </div> -->
+          <h1 class="hero-title text-display-lg text-white leading-tight">
+            യു എ ഇ കോടമ്പുഴ മുസ്ലിം അസ്സോസിയേഷൻ
           </h1>
-          <p
-            class="hero-copy font-body-lg text-white/90 mb-4"
-          >
+          <p class="hero-copy font-body-lg text-white/90 mb-4">
             യു എ ഇ യിൽ ജോലി ചെയ്യുന്ന കോടമ്പുഴ പ്രദേശത്തുകാരുടെ നേതൃത്വത്തിൽ
             27-10-2006 ന് ദുബൈയിൽ രൂപീകൃതമായ ഒരു കൂട്ടായ്മയാണ് യു എ ഇ - കോടമ്പുഴ
             മുസ്ലിം അസ്സോസിയേഷൻ അഥവാ യു എ ഇ - കെ എം എ .
@@ -186,7 +183,9 @@
             class="hero-read-more flex w-fit items-center gap-2 text-secondary-fixed-dim font-label-md text-label-md hover:gap-3 hover:text-secondary-fixed transition-all"
           >
             <span data-read-more-label>Read More</span>
-            <span class="material-symbols-outlined text-base" data-read-more-icon
+            <span
+              class="material-symbols-outlined text-base"
+              data-read-more-icon
               >keyboard_arrow_down</span
             >
           </button>
@@ -199,12 +198,7 @@
             >
               Contact Us
             </a>
-            <a
-              href="contact.html"
-              class="hero-action-link inline-flex min-w-44 items-center justify-center bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all"
-            >
-              Become Volunteer
-            </a>
+            <!-- <a href="contact.html" class="hero-action-link inline-flex min-w-44 items-center justify-center bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-all" > Become Volunteer </a> -->
           </div>
         </div>
       </div>
@@ -279,6 +273,7 @@
         </div>
       </div>
     </section> -->
+
     <!-- Featured Programs -->
     <section class="py-section-padding px-gutter bg-surface-container-low">
       <div class="max-w-container-max mx-auto">
@@ -387,7 +382,7 @@
               കുടുംബ ക്ഷേമ സഹായങ്ങൾ
             </h3>
             <p class="font-body-md text-on-surface-variant">
-              മെമ്പമാരുടെയും കുടുംബാംഗങ്ങളുടെയും ചികിത്സ, വിദ്യാഭ്യാസം, തൊഴിൽ,
+              മെമ്പർമാരുടെയും കുടുംബാംഗങ്ങളുടെയും ചികിത്സ, വിദ്യാഭ്യാസം, തൊഴിൽ,
               കിടപ്പാടം തുടങ്ങി വിവിധ മേഖലകളിലെ ആവശ്യങ്ങൾ നിറവേറ്റുന്നതിന്
               സഹായകമായ ക്ഷേമ പദ്ധതികൾ ആവിഷ്കരിച്ച് നടപ്പിലാക്കി വരുന്നു.
             </p>
@@ -523,7 +518,7 @@
       </div>
     </section> -->
     <!-- Gallery Section -->
-    <section class="py-section-padding bg-surface-container-lowest">
+    <!-- <section class="py-section-padding bg-surface-container-lowest">
       <div class="max-w-container-max mx-auto px-gutter">
         <div class="text-center mb-16 reveal">
           <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
@@ -589,7 +584,146 @@
           </a>
         </div>
       </div>
+    </section> -->
+
+    <section class="py-section-padding bg-surface-container-lowest">
+      <div class="max-w-container mx-auto px-gutter">
+        <div class="text-center mb-16 reveal">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+            Capturing Our Impact
+          </h2>
+
+          <p class="text-on-surface-variant text-body-lg max-w-2xl mx-auto">
+            Moments of hope, service, and community growth captured through our
+            journey.
+          </p>
+        </div>
+
+        <div class="gallery-slider">
+          <div class="gallery-track">
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery1.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery2.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery3.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery4.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery5.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery6.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery7.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery8.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery9.jpeg" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery10.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery11.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery12.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery13.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery14.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery15.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery16.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery17.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery18.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery19.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery20.jpeg" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery21.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery22.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery23.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery24.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery25.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery26.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery27.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="assets/images/gallery/gallery28.jpeg" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            href="gallery.html"
+            class="border-2 border-primary text-primary px-10 py-3 rounded-full hover:bg-primary hover:text-white transition"
+          >
+            View All Gallery
+          </a>
+        </div>
+      </div>
     </section>
+
     <!-- Leadership Section -->
     <section class="py-section-padding pattern-overlay">
       <div class="max-w-container-max mx-auto px-gutter">
@@ -602,8 +736,38 @@
             community empowerment.
           </p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 reveal">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 reveal"
+        >
           <!-- Member 1 -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
+            >
+              <img
+                alt="Committee Member"
+                class="w-full object-cover"
+                src="/assets/images/members/user.png"
+              />
+            </div>
+            <h4
+              class="font-headline-md text-headline-md text-on-surface mb-1 text-capitalized"
+            >
+              Ayub Kallada
+            </h4>
+            <p
+              class="text-secondary font-label-md font-bold text-xs uppercase tracking-widest mt-1"
+            >
+              President
+            </p>
+            <p
+              class="text-secondary font-label-md text-xs mt-2 tracking-widest"
+            >
+              ( UAE-KMA Committee )
+            </p>
+          </div>
+
+          <!-- Member 2 -->
           <div class="flex flex-col items-center text-center">
             <div
               class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
@@ -614,16 +778,24 @@
                 src="/assets/images/members/jaleesh.jpeg"
               />
             </div>
-            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">
-              JALEESH
+            <h4
+              class="font-headline-md text-headline-md text-on-surface mb-1 text-capitalized"
+            >
+              Jaleesh Kammu NC
             </h4>
             <p
-              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+              class="text-secondary font-label-md font-bold text-xs mt-1 uppercase tracking-widest"
             >
               General Secretary
             </p>
+            <p
+              class="text-secondary font-label-md text-xs mt-2 tracking-widest"
+            >
+              ( UAE-KMA Committee )
+            </p>
           </div>
-          <!-- Member 2 -->
+
+          <!-- Member 3 -->
           <div class="flex flex-col items-center text-center">
             <div
               class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
@@ -638,12 +810,50 @@
               Shaheed
             </h4>
             <p
-              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+              class="text-secondary font-label-md text-xs font-bold mt-1 uppercase tracking-widest"
             >
               Treasurer
             </p>
+            <p
+              class="text-secondary font-label-md text-xs mt-2 tracking-widest"
+            >
+              ( UAE-KMA Committee )
+            </p>
           </div>
-          <!-- Member 3 -->
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 reveal mt-12"
+        >
+          <!-- Member 4 -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
+            >
+              <img
+                alt="Committee Member"
+                class="w-full object-cover"
+                src="/assets/images/members/user.png"
+              />
+            </div>
+            <h4
+              class="font-headline-md text-headline-md text-on-surface mb-1 text-capitalized"
+            >
+              Abdul Majeed K
+            </h4>
+            <p
+              class="text-secondary font-label-md font-bold text-xs uppercase tracking-widest mt-1"
+            >
+              President
+            </p>
+            <p
+              class="text-secondary font-label-md text-xs mt-2 tracking-widest"
+            >
+              ( KMA Kodampuzha Chapter Committee )
+            </p>
+          </div>
+
+          <!-- Member 5 -->
           <div class="flex flex-col items-center text-center">
             <div
               class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
@@ -654,16 +864,24 @@
                 src="/assets/images/members/Pocker-kutty.jpeg"
               />
             </div>
-            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">
-              Pocker Kutty
+            <h4
+              class="font-headline-md text-headline-md text-on-surface mb-1 text-capitalized"
+            >
+              Pocker Kutty KP
             </h4>
             <p
-              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+              class="text-secondary font-label-md font-bold text-xs mt-1 uppercase tracking-widest"
             >
               General Secretary
             </p>
+            <p
+              class="text-secondary font-label-md text-xs mt-2 tracking-widest"
+            >
+              ( KMA Kodampuzha Chapter Committee )
+            </p>
           </div>
-          <!-- Member 4 -->
+
+          <!-- Member 6 -->
           <div class="flex flex-col items-center text-center">
             <div
               class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6"
@@ -671,26 +889,31 @@
               <img
                 alt="Committee Member"
                 class="w-full object-cover"
-                src="/assets/images/members/Shanavas.jpeg"
+                src="assets/images/members/Shanavas.jpeg"
               />
             </div>
             <h4 class="font-headline-md text-headline-md text-on-surface mb-1">
-              Shanavas
+              Shanavas VK
             </h4>
             <p
-              class="text-secondary font-label-md text-xs uppercase tracking-widest"
+              class="text-secondary font-label-md text-xs font-bold mt-1 uppercase tracking-widest"
             >
               Treasurer
             </p>
-          </div>
-          <div class="col-span-2 md:col-span-4 mt-6 flex justify-center reveal">
-            <a
-              href="team_initiatives.html#members"
-              class="border-2 border-primary text-primary px-10 py-3 rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all"
+            <p
+              class="text-secondary font-label-md text-xs mt-2 tracking-widest"
             >
-              View All Members
-            </a>
+              ( KMA Kodampuzha Chapter Committee )
+            </p>
           </div>
+        </div>
+        <div class="col-span-2 md:col-span-4 mt-12 flex justify-center reveal">
+          <a
+            href="team_initiatives.html#members"
+            class="border-2 border-primary text-primary px-10 py-3 rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all"
+          >
+            View All Executive Members
+          </a>
         </div>
       </div>
     </section>
@@ -775,7 +998,7 @@
       </div>
     </section> -->
 
-    <section class="py-section-padding px-gutter pt-3">
+    <!-- <section class="py-section-padding px-gutter pt-3">
       <div
         class="max-w-container-max mx-auto bg-primary rounded-[40px] p-12 md:p-20 relative overflow-hidden text-center"
       >
@@ -806,7 +1029,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div id="site-footer"></div>
     <script>
@@ -907,5 +1130,7 @@
       });
     </script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/hero-slider.js"></script>
+    <script src="assets/js/gallery-slider.js"></script>
   </body>
 </html>
